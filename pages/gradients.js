@@ -41,6 +41,8 @@ const RespLineChart = () => {
     let yAccessor = (d) => d.total;
     let yAxisLabel = "Test Label";
     
+const ytop = d3.max(payoff, yAccessor)
+	  console.log('ytop >>>', ytop)
 
     // Dimensions
     let dimensions = {
@@ -82,7 +84,7 @@ const RespLineChart = () => {
     // Scales
     const yScale = d3
       .scaleLinear()
-      .domain([.10, d3.max(payoff, yAccessor)])
+      .domain([d3.min(payoff, yAccessor), d3.max(payoff, yAccessor)])
       .range([dimensions.containerHeight, 0])
       .nice();
 
@@ -165,7 +167,11 @@ const RespLineChart = () => {
     container
       .append("g")
       .classed("xAxis", true)
-      .style("transform", `translateY(${dimensions.containerHeight}px)`)
+		  // .style("transform", `translateY(${ytop})`)
+		  .attr('transform', 'translate(0,' + (yScale(0)) + ')')
+		  // .style("transform", `translateY(0, 400)`)
+		  // .style("transform", `translateY(${yScale(d3.max(payoff, yAccessor))})`)
+      // .style("transform", `translateY(${dimensions.containerHeight}px)`)
       .style("opacity", 0.5)
       .call(xAxis);
 
