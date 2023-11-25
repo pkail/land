@@ -13,7 +13,7 @@ const RespLineChart = () => {
 
   // State to track width and height of SVG Container
   const [width, setWidth] = useState();
-  const [height, setHeight] = useState(400);
+  const [height, setHeight] = useState(600);
 
   // This function calculates width and height of the container
   const getSvgContainerSize = () => {
@@ -98,22 +98,13 @@ const ytop = d3.max(payoff, yAccessor)
       .x((d) => xScale(xAccessor(d)))
       .y((d) => yScale(yAccessor(d)));
 
-    // Draw Line
-    container
-      .append("path")
-      .datum(payoff)
-      .attr("d", lineGenerator)
-      .attr("fill", "black")
-      .attr("stroke", "white")
-      .attr("stroke-width", 2)
-      .style("filter", "url(#glow)")
-
       const gradient = svg.append("defs")
       .append("linearGradient")
       .attr("id", "gradient")
       .attr("gradientUnits", "userSpaceOnUse")
-      .attr("x1", 0).attr("y1", yScale(0))
-      .attr("x2", 0).attr("y2", d3.max(payoff, yAccessor))
+      // .attr("x1", 0).attr("y1", 0)
+      .attr("x1", 0).attr("y1", yScale(d3.max(payoff, yAccessor)))
+      .attr("x2", 0).attr("y2", yScale(d3.min(payoff, yAccessor)))
       .selectAll("stop")
       .data([
           {offset: "0%", color: "white"},
@@ -122,25 +113,47 @@ const ytop = d3.max(payoff, yAccessor)
       .enter().append("stop")
       .attr("offset", (d)  => d.offset )
       .attr("stop-color", (d) => d.color );
+	  
+    // Draw Line
+    container
+      .append("path")
+      .datum(payoff)
+      .attr("d", lineGenerator)
+		.attr("fill", "url(#gradient)")
+     .attr("stroke", "black")
+      .attr("stroke-width", 11)
 
+    // Draw Area
+	  const area = d3
+		  .area()
+      .x((d) => xScale(xAccessor(d)))
+      .y0((d) => yScale(0))
+      .y1((d) => yScale(yAccessor(d)));
 
-      const defs = svg.append("defs");
-      const filter = defs.append("filter")
-        .attr("id", "glow")
-        .attr("x", "-50%")
-        .attr("y", "-50%")
-        .attr("width", "200%")
-        .attr("height", "200%");
+	  container
+		.append("path")
+		.datum(payoff)
+		.attr("fill", "url(#gradient)")
+	    .attr("class", "area")
+		.attr("d", area)
+
+      // const defs = svg.append("defs");
+      // const filter = defs.append("filter")
+      //   .attr("id", "glow")
+      //   .attr("x", "-50%")
+      //   .attr("y", "-50%")
+      //   .attr("width", "200%")
+      //   .attr("height", "200%");
       
-      filter.append("feGaussianBlur")
-        .attr("stdDeviation", "5")
-        .attr("result", "coloredBlur");
+      // filter.append("feGaussianBlur")
+      //   .attr("stdDeviation", "5")
+      //   .attr("result", "coloredBlur");
 
-      const feMerge = filter.append("feMerge");
-      feMerge.append("feMergeNode")
-        .attr("in", "coloredBlur");
-      feMerge.append("feMergeNode")
-        .attr("in", "SourceGraphic");      
+      // const feMerge = filter.append("feMerge");
+      // feMerge.append("feMergeNode")
+      //   .attr("in", "coloredBlur");
+      // feMerge.append("feMergeNode")
+      //   .attr("in", "SourceGraphic");      
 
 
 
