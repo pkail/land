@@ -22,6 +22,8 @@ const RespLineChart = () => {
 
     const newHeight = svgContainer.current.clientHeight;
     setHeight(newHeight);
+	
+
   };
 
   useEffect(() => {
@@ -111,22 +113,14 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
       .selectAll("stop")
       .data([
           {offset: "0%", color: "green"},
-          {offset: origin, color: "white"},
+          {offset: origin, color: "black"},
           {offset: "100%", color: "red"}
       ])
       .enter().append("stop")
       .attr("offset", (d)  => d.offset )
       .attr("stop-color", (d) => d.color );
 
-    // Draw Line
-    container
-      .append("path")
-      .datum(payoff)
-      .attr("d", lineGenerator)
-		// .attr("fill", "url(#gradient)")
-		.attr("fill", "none")
-     .attr("stroke", "black")
-      .attr("stroke-width", 5)
+
 
     // Draw Area
 	  const area = d3
@@ -140,8 +134,23 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
 		.datum(payoff)
 		.attr("fill", "url(#gradient)")
 	    .attr("class", "area")
+		.attr("opacity", 0.5)
 		.attr("d", area)
 
+
+    // Draw Line
+   const lineThickness = 5;
+
+    container
+      .append("path")
+      .datum(payoff)
+      .attr("d", lineGenerator)
+		// .attr("fill", "url(#gradient)")
+		.attr("fill", "none")
+		.attr("stroke", "white" )
+		.attr("opacity", 0.3)
+		// .attr("stroke", "url(#line-gradient)" )
+		.attr("stroke-width", lineThickness)
       // const defs = svg.append("defs");
       // const filter = defs.append("filter")
       //   .attr("id", "glow")
@@ -149,7 +158,7 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
       //   .attr("y", "-50%")
       //   .attr("width", "200%")
       //   .attr("height", "200%");
-      
+
       // filter.append("feGaussianBlur")
       //   .attr("stdDeviation", "5")
       //   .attr("result", "coloredBlur");
@@ -174,24 +183,26 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
       .append("text")
       .attr("x", -dimensions.containerHeight / 2)
       .attr("y", -dimensions.margins + 10)
-      .attr("fill", "black")
+		.attr("fill", "none")
+		.attr("stroke", "white" )
       .text(yAxisLabel)
       .style("font-size", ".8rem")
       .style("transform", "rotate(270deg)")
+      .attr("stroke", "white")
       .style("text-anchor", "middle");
 
-    const xAxis = d3.axisBottom(xScale).tickSizeInner(3).tickSizeOuter(0)
+    const xAxis = d3.axisBottom(xScale)
+	.tickSizeInner(3)
+	.tickSizeOuter(0)
 
     container
       .append("g")
       .classed("xAxis", true)
-		  // .style("transform", `translateY(${ytop})`)
 		  .attr('transform', 'translate(0,' + (yScale(0)) + ')')
-		  // .style("transform", `translateY(0, 400)`)
-		  // .style("transform", `translateY(${yScale(d3.max(payoff, yAccessor))})`)
-      // .style("transform", `translateY(${dimensions.containerHeight}px)`)
-      .style("opacity", 0.5)
-      .call(xAxis);
+      .call(xAxis)
+	  .selectAll("line,path,text")
+	  .style("stroke", "white")
+      // .attr("stroke-width", 1)
 
 
     // Tooltip
@@ -240,8 +251,8 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
   }, [payoff, width, height]); // redraw chart if data or dimensions change
 
   return (
-    <div ref={svgContainer} className="line-chart">
-      <svg ref={svgRef} />
+    <div ref={svgContainer} >
+      <svg ref={svgRef} style={{background: "black"}} />
       <div ref={tooltipRef} className="lc-tooltip">
         <div className="data"></div>
         <div className="date"></div>
