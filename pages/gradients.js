@@ -88,6 +88,9 @@ const ytop = d3.max(payoff, yAccessor)
       .range([dimensions.containerHeight, 0])
       .nice();
 
+const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + d3.max(payoff, yAccessor));
+	  console.log('origin >>>', origin)
+
     const xScale = d3.scaleLinear()
     .domain(d3.extent(payoff, xAccessor))
     .range([0, dimensions.containerWidth])
@@ -108,7 +111,7 @@ const ytop = d3.max(payoff, yAccessor)
       .selectAll("stop")
       .data([
           {offset: "0%", color: "green"},
-          {offset: "50%", color: "white"},
+          {offset: origin, color: "white"},
           {offset: "100%", color: "red"}
       ])
       .enter().append("stop")
