@@ -107,21 +107,23 @@ const ytop = d3.max(payoff, yAccessor)
       .attr("x2", 0).attr("y2", yScale(d3.min(payoff, yAccessor)))
       .selectAll("stop")
       .data([
-          {offset: "0%", color: "white"},
-          {offset: "50%", color: "green"}
+          {offset: "0%", color: "green"},
+          {offset: "50%", color: "white"},
+          {offset: "100%", color: "red"}
       ])
       .enter().append("stop")
       .attr("offset", (d)  => d.offset )
       .attr("stop-color", (d) => d.color );
-	  
+
     // Draw Line
     container
       .append("path")
       .datum(payoff)
       .attr("d", lineGenerator)
-		.attr("fill", "url(#gradient)")
+		// .attr("fill", "url(#gradient)")
+		.attr("fill", "none")
      .attr("stroke", "black")
-      .attr("stroke-width", 11)
+      .attr("stroke-width", 5)
 
     // Draw Area
 	  const area = d3
