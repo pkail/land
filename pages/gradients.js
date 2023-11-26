@@ -131,7 +131,9 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
       .selectAll("stop")
       .data([
           {offset: "0%", color: "green"},
-          {offset: origin, color: "white"},
+          // {offset: "10%", color: "#6fff70"},
+          {offset: origin, color: "#f7e8e8"},
+		  // {offset: "90%", color: "ffa3a3"},
           {offset: "100%", color: "red"}
       ])
       .enter().append("stop")
@@ -155,36 +157,30 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
 
 
     // Draw Line
-   const lineThickness = 5;
+   const lineThickness = 3;
 
     container
       .append("path")
       .datum(payoff)
       .attr("d", lineGenerator)
 		.attr("fill", "none")
-		// .attr("stroke", "white" )
-		// .attr("opacity", 0.3)
+		.style("filter", "url(#glow)")
+		.attr("stroke", "white" )
+		.attr("opacity", 1)
 		.attr("stroke", "url(#lineGradient)" )
 		.attr("stroke-width", lineThickness)
-      // const defs = svg.append("defs");
-      // const filter = defs.append("filter")
-      //   .attr("id", "glow")
-      //   .attr("x", "-50%")
-      //   .attr("y", "-50%")
-      //   .attr("width", "200%")
-      //   .attr("height", "200%");
 
-      // filter.append("feGaussianBlur")
-      //   .attr("stdDeviation", "5")
-      //   .attr("result", "coloredBlur");
+	// filter definition
+      const defs = svg.append("defs");
+      const filter = defs.append("filter")
+        .attr("id", "glow")
+        .attr("x", "-50%")
+        .attr("y", "-50%")
+        .attr("width", "200%")
+        .attr("height", "200%");
 
-      // const feMerge = filter.append("feMerge");
-      // feMerge.append("feMergeNode")
-      //   .attr("in", "coloredBlur");
-      // feMerge.append("feMergeNode")
-      //   .attr("in", "SourceGraphic");      
-
-
+      filter.append("feGaussianBlur")
+        .attr("stdDeviation", "1.5")
 
 
 
