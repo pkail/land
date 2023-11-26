@@ -112,7 +112,7 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
       .attr("x2", 0).attr("y2", yScale(d3.min(payoff, yAccessor)))
       .selectAll("stop")
       .data([
-          {offset: "0%", color: "green"},
+		  {offset: "0%", color: "green"},
           {offset: origin, color: "black"},
           {offset: "100%", color: "red"}
       ])
@@ -121,6 +121,22 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
       .attr("stop-color", (d) => d.color );
 
 
+      const lineGradient = svg.append("defs")
+      .append("linearGradient")
+      .attr("id", "lineGradient")
+      .attr("gradientUnits", "userSpaceOnUse")
+      // .attr("x1", 0).attr("y1", 0)
+      .attr("x1", 0).attr("y1", yScale(d3.max(payoff, yAccessor)))
+      .attr("x2", 0).attr("y2", yScale(d3.min(payoff, yAccessor)))
+      .selectAll("stop")
+      .data([
+          {offset: "0%", color: "green"},
+          {offset: origin, color: "white"},
+          {offset: "100%", color: "red"}
+      ])
+      .enter().append("stop")
+      .attr("offset", (d)  => d.offset )
+      .attr("stop-color", (d) => d.color );
 
     // Draw Area
 	  const area = d3
@@ -145,11 +161,10 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
       .append("path")
       .datum(payoff)
       .attr("d", lineGenerator)
-		// .attr("fill", "url(#gradient)")
 		.attr("fill", "none")
-		.attr("stroke", "white" )
-		.attr("opacity", 0.3)
-		// .attr("stroke", "url(#line-gradient)" )
+		// .attr("stroke", "white" )
+		// .attr("opacity", 0.3)
+		.attr("stroke", "url(#lineGradient)" )
 		.attr("stroke-width", lineThickness)
       // const defs = svg.append("defs");
       // const filter = defs.append("filter")
@@ -202,7 +217,7 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
       .call(xAxis)
 	  .selectAll("line,path,text")
 	  .style("stroke", "white")
-      // .attr("stroke-width", 1)
+      .attr("stroke-width", .3)
 
 
     // Tooltip
