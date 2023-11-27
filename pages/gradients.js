@@ -41,6 +41,8 @@ const RespLineChart = () => {
     // data_type variables switch
     let xAccessor = (d) => d.x;
     let yAccessor = (d) => d.total;
+    let leg1Accessor = (d) => d.leg1;
+    let leg2Accessor = (d) => d.leg2;
     let yAxisLabel = "Test Label";
     
 const ytop = d3.max(payoff, yAccessor)
@@ -90,6 +92,18 @@ const ytop = d3.max(payoff, yAccessor)
       .range([dimensions.containerHeight, 0])
       .nice();
 
+    const leg1Scale = d3
+      .scaleLinear()
+      .domain([d3.min(payoff, leg1Accessor), d3.max(payoff, leg1Accessor)])
+      .range([dimensions.containerHeight, 0])
+      .nice();
+
+    const leg2Scale = d3
+      .scaleLinear()
+      .domain([d3.min(payoff, leg2Accessor), d3.max(payoff, leg2Accessor)])
+      .range([dimensions.containerHeight, 0])
+      .nice();
+
 const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + d3.max(payoff, yAccessor));
 	  console.log('origin >>>', origin)
 
@@ -97,11 +111,23 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
     .domain(d3.extent(payoff, xAccessor))
     .range([0, dimensions.containerWidth])
 
-    // Line Generator
+    // TotalLine Generator
     const lineGenerator = d3
       .line()
       .x((d) => xScale(xAccessor(d)))
       .y((d) => yScale(yAccessor(d)));
+	  
+    // Leg1Line Generator
+    const leg1LineGenerator = d3
+      .line()
+      .x((d) => xScale(xAccessor(d)))
+      .y((d) => leg1Scale(leg1Accessor(d)));
+
+    // Leg1Line Generator
+    const leg2LineGenerator = d3
+      .line()
+      .x((d) => xScale(xAccessor(d)))
+      .y((d) => leg2Scale(leg2Accessor(d)));
 
       const gradient = svg.append("defs")
       .append("linearGradient")
@@ -183,6 +209,25 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
         .attr("stdDeviation", "1.5")
 
 
+// Draw leg1 line
+    container
+      .append("path")
+      .datum(payoff)
+      .attr("d", leg1LineGenerator)
+		.attr("fill", "none")
+		.attr("stroke", "green" )
+		.attr("opacity", 1)
+		.attr("stroke-width", 2)
+
+// Draw leg2 line
+    container
+      .append("path")
+      .datum(payoff)
+      .attr("d", leg2LineGenerator)
+		.attr("fill", "none")
+		.attr("stroke", "red" )
+		.attr("opacity", 1)
+		.attr("stroke-width", 2)
 
     // Axis
     const yAxis = d3.axisLeft(yScale).tickFormat((d) => `${d}`);
