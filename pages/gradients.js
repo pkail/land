@@ -116,7 +116,7 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
       .line()
       .x((d) => xScale(xAccessor(d)))
       .y((d) => yScale(yAccessor(d)));
-	  
+
     // Leg1Line Generator
     const leg1LineGenerator = d3
       .line()
@@ -187,6 +187,7 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
 
     container
       .append("path")
+	    .attr("class", "total")
       .datum(payoff)
       .attr("d", lineGenerator)
 		.attr("fill", "none")
@@ -258,10 +259,64 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
       .call(xAxis)
 	  .selectAll("line,path,text")
 	  .style("stroke", "white")
-      .attr("stroke-width", .3)
+      .attr("stroke-width", .3);
 
 
     // Tooltip
+// const tooltip = d3.select('.tooltip-area')
+// 		  .style('opacity', 0);
+
+// const mouseover = (event, d) => {
+// 	tooltip.style('opacity', 1)
+//       }
+
+// const mouseleave = (event, d) => {
+// 	tooltip.style('opacity', 0)
+//       }
+
+//       const mousemove = (event, d) => {
+//         const text = d3.select('.tooltip-area__text');
+
+//         text.text(`Sales were ${d.sales} in ${d.year}`);
+
+//         const [x, y] = d3.pointer(event)
+//           .attr('transform', `translate(${x}, ${y})`);
+//       };
+
+	container
+	    .append("rect")
+		  .attr("x", 100)
+		  .attr("y", 100)
+		  .attr("height", 180)
+		  .attr("width", 180)
+		  .style("fill", "green")
+		  .style("stroke", "black")
+		  .style("opacity", 1)
+	
+
+        container
+		  .append("text")
+.style("text-anchor", "middle")
+		  .style("fill", "red")
+		  .attr('x', 280)
+		  .attr('y', 280)
+	      .text("Uvo")
+ .attr("font-size","34px");
+
+	    // .select("rect")
+		  // .datum(payoff)
+        // .attr("width", x.bandwidth())
+        // .attr("y", (d) => y1(d.sales))
+        // .attr("height", (d) => y1(0) - y1(d.sales))
+        // .on("mousemove", mousemove)
+        // .on("mouseleave", mouseleave)
+        // .on("mouseover", mouseover);
+
+      // svg
+      //   .on("mousemove", mousemove)
+      //   .on("mouseleave", mouseleave)
+      //   .on("mouseover", mouseover);
+
     // container
     //   .append("rect")
     //   .classed("mouse-tracker", true)
@@ -269,13 +324,16 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
     //   .attr("height", dimensions.containerHeight)
     //   .style("opacity", 0)
     //   .on("touchmouse mousemove", function (event) {
-    //     const mousePos = d3.pointer(event, this);
+    //     // const mousePos = d3.pointer();
+		// const [x, y] = d3.pointer(event);
+		  // console.log('y >>>', y)
+		  // console.log('x >>>', x)
 
-    //     // x coordinate stored in mousePos index 0
-    //     const date = xScale.invert(mousePos[0]);
+        // x coordinate stored in mousePos index 0
+        // const date = xScale.invert(mousePos[0]);
 
-    //     // Custom Bisector - left, center, right
-    //     const dateBisector = d3.bisector(xAccessor).center;
+        // Custom Bisector - left, center, right
+        // const dateBisector = d3.bisector(xAccessor).center;
 
     //     const bisectionIndex = dateBisector(Data, date);
     //     //console.log(bisectionIndex);
@@ -283,11 +341,14 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
     //     const hoveredIndexData = Data[Math.max(0, bisectionIndex)];
 
     //     // Update Image
-    //     tooltipDot
-    //       .style("opacity", 1)
-    //       .attr("cx", xScale(xAccessor(hoveredIndexData)))
-    //       .attr("cy", yScale(yAccessor(hoveredIndexData)))
-    //       .raise();
+		// container
+		// 	  .append("tooltipDot");
+
+        // tooltipDot
+          // .style("opacity", 1)
+          // .attr("cx", xScale(xAccessor(x)))
+          // .attr("cy", yScale(yAccessor(y)))
+          // .raise();
 
     //     tooltip
     //       .style("display", "block")
@@ -299,7 +360,7 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
     //     const dateFormatter = d3.timeFormat("%B %-d, %Y");
 
     //     tooltip.select(".date").text(`${dateFormatter(xAccessor(hoveredIndexData))}`);
-    //   })
+      // })
     //   .on("mouseleave", function () {
     //     tooltipDot.style("opacity", 0);
     //     tooltip.style("display", "none");
@@ -309,7 +370,7 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
   return (
     <div ref={svgContainer} >
       <svg ref={svgRef} style={{background: "black"}} />
-      <div ref={tooltipRef} className="lc-tooltip">
+      <div>
         <div className="data"></div>
         <div className="date"></div>
       </div>
