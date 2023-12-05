@@ -260,14 +260,85 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
 	  .selectAll("line,path,text")
 	  .style("stroke", "white")
       .attr("stroke-width", .3);
-
+////////////////////////
 
     // Tooltip
-// const tooltip = d3.select('.tooltip-area')
-// 		  .style('opacity', 0);
+
+	  const tooltip = d3
+    .select('.total')
+    // .select('#container')
+    .append('div')
+    .attr('class', 'tooltip')
+    .style('opacity', 0);
+
+container
+    .select('.total')
+    .on('mouseover', () => {
+console.log('mouseover')
+		const [x, y] = d3.pointer(event);
+			  console.log('y >>>', y)
+			  console.log('x >>>', x)
+
+		container
+			.append('circle')
+        // .style('display', null)
+			.style('opacity', 1)
+		.attr('fill', 'white')
+		  .attr('class', 'circle')
+			.attr('r', 9)
+			.attr('cx', x)
+			.attr('cy', y);
+    })
+		  // .on('mousemove', () => {
+		// const [x, y] = d3.pointer(event);
+			  // console.log('y >>>', y)
+			  // console.log('x >>>', x)
+
+		// container
+			// .append('circle')
+			// .style('opacity', 1)
+		// .attr('fill', 'white')
+		  // .attr('class', 'circle')
+			// .attr('r', 9)
+			// .attr('cx', x)
+			// .attr('cy', y);
+// })
+    .on('mouseout', () => {
+		console.log('mouseout >>>')
+		container
+			.selectAll('.circle')
+        // .style('display', "none")
+        .transition()
+        .duration(1000)
+			.style('opacity', 0)
+    })
+
+
+// function mousemove(event) {
+   //  const bisect = d3.biector(d => d.total).left;
+   //  const xPos = d3.mouse(this)[0];
+   //  const x0 = bisect(data, xScale.invert(xPos));
+   //  const d0 = payoff[0];
+   //  focus.attr(
+   //      'transform',
+   //      `translate(${xScale(d0.label)},${yScale(d0.value)})`,
+   //  );
+   //  tooltip
+   //      .transition()
+   //      .duration(300)
+   //      .style('opacity', 0.9);
+   //  tooltip
+   //      .html(d0.tooltipContent || d0.label)
+   //      .style(
+   //          'transform',
+   //          `translate(${xScale(d0.label) + 30}px,${yScale(d0.value) - 30}px)`,
+   //  );
+// }
+
+// const tooltip = d3.select('.total')
 
 // const mouseover = (event, d) => {
-// 	tooltip.style('opacity', 1)
+// 	tooltip.style('opacity', 1);
 //       }
 
 // const mouseleave = (event, d) => {
@@ -277,45 +348,13 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
 //       const mousemove = (event, d) => {
 //         const text = d3.select('.tooltip-area__text');
 
-//         text.text(`Sales were ${d.sales} in ${d.year}`);
+//         text.text(`Sales were `);
 
 //         const [x, y] = d3.pointer(event)
 //           .attr('transform', `translate(${x}, ${y})`);
 //       };
 
-	container
-	    .append("rect")
-		  .attr("x", 100)
-		  .attr("y", 100)
-		  .attr("height", 180)
-		  .attr("width", 180)
-		  .style("fill", "green")
-		  .style("stroke", "black")
-		  .style("opacity", 1)
-	
 
-        container
-		  .append("text")
-.style("text-anchor", "middle")
-		  .style("fill", "red")
-		  .attr('x', 280)
-		  .attr('y', 280)
-	      .text("Uvo")
- .attr("font-size","34px");
-
-	    // .select("rect")
-		  // .datum(payoff)
-        // .attr("width", x.bandwidth())
-        // .attr("y", (d) => y1(d.sales))
-        // .attr("height", (d) => y1(0) - y1(d.sales))
-        // .on("mousemove", mousemove)
-        // .on("mouseleave", mouseleave)
-        // .on("mouseover", mouseover);
-
-      // svg
-      //   .on("mousemove", mousemove)
-      //   .on("mouseleave", mouseleave)
-      //   .on("mouseover", mouseover);
 
     // container
     //   .append("rect")
@@ -328,6 +367,28 @@ const origin = d3.max(payoff, yAccessor)/(Math.abs(d3.min(payoff, yAccessor)) + 
 		// const [x, y] = d3.pointer(event);
 		  // console.log('y >>>', y)
 		  // console.log('x >>>', x)
+	// container
+	    // .append("rect")
+		  // .attr("x", 100)
+		  // .attr("y", 100)
+		  // .attr("height", 180)
+		  // .attr("width", 180)
+		  // .style("fill", "green")
+		  // .style("stroke", "black")
+		  // .style("opacity", 1)
+
+
+		// tooltip
+    //     // container
+		  // .append("text")
+		  // .datum(payoff)
+// .style("text-anchor", "middle")
+		  // .style("fill", "red")
+		  // .attr('x', x)
+		  // .attr('y', y)
+			  // .text(x + ' ' + y)
+ // .attr("font-size","34px");
+	  // });
 
         // x coordinate stored in mousePos index 0
         // const date = xScale.invert(mousePos[0]);
