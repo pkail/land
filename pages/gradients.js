@@ -12,7 +12,7 @@ const RespLineChart = () => {
   const svgContainer = useRef(null); // The PARENT of the SVG
 
   // State to track width and height of SVG Container
-  const [width, setWidth] = useState();
+  const [width, setWidth] = useState(400);
   const [height, setHeight] = useState(600);
 
   // This function calculates width and height of the container
