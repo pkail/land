@@ -278,21 +278,31 @@ console.log('mouseover')
 		const [x, y] = d3.pointer(event);
 			  console.log('y >>>', y)
 			  console.log('x >>>', x)
-
 		container
-			.append('circle')
+			.append('rect')
         // .style('display', null)
 			.style('opacity', 1)
 		.attr('fill', 'white')
-		  .attr('class', 'circle')
-			.attr('r', 9)
-			.attr('cx', x)
-			.attr('cy', y);
+		  .attr('class', 'rect')
+			.attr('x', x)
+			.attr('y', y)
+			.attr('height', 100)
+			.attr('width', 50);
+		container
+			.append('text')
+			.attr('x', x)
+			.attr('y', y+30)
+			.style('opacity', 1)
+      .style("font-size", "1rem")
+			.attr('stroke', 'black')
+			.attr('fill', 'black')
+			.text(x + ' ' + y)
     })
 		  // .on('mousemove', () => {
 		// const [x, y] = d3.pointer(event);
 			  // console.log('y >>>', y)
 			  // console.log('x >>>', x)
+
 
 		// container
 			// .append('circle')
@@ -303,13 +313,12 @@ console.log('mouseover')
 			// .attr('cx', x)
 			// .attr('cy', y);
 // })
-    .on('mouseout', () => {
-		console.log('mouseout >>>')
+    .on('mouseleave', () => {
 		container
-			.selectAll('.circle')
+			.selectAll('.rect')
         // .style('display', "none")
         .transition()
-        .duration(1000)
+        .duration(100)
 			.style('opacity', 0)
     })
 
