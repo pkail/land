@@ -1,29 +1,27 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import {CheckboxGroup, Checkbox} from "@nextui-org/react";
+import { useState, useEffect, useMemo } from "react";
+import { values }  from "../components/lineCharts/barChartsData";
+import Layout from '../components/Layout';
+import LineChartsSvg from "../components/lineCharts/lineChartsSvg";
 
-const inter = Inter({ subsets: ['latin'] })
+const LineCharts = ({barChartsData = values}) =>  {
 
-export default function Home() {
-const handleChange = (value) => alert(value)
-  return (
-	  <>
-		  <div className="text-3xl underline text-red-500">
-		  Uvo is on my lap.
+	return (
+		<Layout title="Cost per Acre" >
+	  Cost per Acre
 
-		  </div>
-    <CheckboxGroup
-      label="Select cities"
-      defaultValue={["buenos-aires", "london"]}
-	  onChange={handleChange}
-
-    >
-      <Checkbox value="buenos-aires">Buenos Aires</Checkbox>
-      <Checkbox value="sydney">Sydney</Checkbox>
-      <Checkbox value="san-francisco">San Francisco</Checkbox>
-      <Checkbox value="london">London</Checkbox>
-      <Checkbox value="tokyo">Tokyo</Checkbox>
-    </CheckboxGroup>
-	</>
-  )
+		 <LineChartsSvg  data ={values} />
+		</Layout>
+  );
 }
+
+export default LineCharts;
+
+
+// export async function getStaticProps(){
+// const res = await sql `SELECT * FROM barcharts ORDER BY year;`
+// 	return {
+// 		props: {...await serverSideTranslations('en', ['common']),
+// 			barChartsData: res}
+// }
+// }
+
