@@ -1,36 +1,36 @@
 export const values = [
   {
-    id: 1,
+    key: "1",
     acres: 4,
     cost: 100
 	},
   {
-    id: 2,
+    key: "2",
     acres: 6,
     cost: 150
   },
   {
-    id: 3,
+    key: "3",
     acres: 8,
     cost: 158
   },
   {
-    id: 4,
+    key: "4",
     acres: 4,
     cost: 160
   },
   {
-    id: 5,
+    key: "5",
     acres: 8,
     cost: 280
   },
   {
-    id: 6,
+    key: "6",
     acres: 5.5,
     cost: 190
   },
   {
-    id: 7,
+    key: "7",
     acres: 6.5,
     cost: 290
   }
