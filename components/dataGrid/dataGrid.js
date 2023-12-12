@@ -1,33 +1,8 @@
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/react";
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue, RadioGroup, Radio} from "@nextui-org/react";
+import { useSelector, useDispatch } from 'react-redux';
+import { acreFilter } from '../acreSlice';
 
-
-const rows = [
-  {
-    key: "1",
-    name: "Tony Reichert",
-    role: "CEO",
-    status: "Active",
-  },
-  {
-    key: "2",
-    name: "Zoey Lang",
-    role: "Technical Lead",
-    status: "Paused",
-  },
-  {
-    key: "3",
-    name: "Jane Fisher",
-    role: "Senior Developer",
-    status: "Active",
-  },
-  {
-    key: "4",
-    name: "William Howard",
-    role: "Community Manager",
-    status: "Vacation",
-  },
-];
-
+const colors = ["default", "primary", "secondary", "success", "warning", "danger"];
 const columns = [
   {
     key: "acres",
@@ -42,19 +17,26 @@ const columns = [
 export default function DataGrid(props) {
 	console.log('props >>>', props)
 	console.log('props.data >>>', props.data)
+const acre = useSelector(state => state.acre);
+	console.log('acre in datagrid ', acre)
+	const dispatch = useDispatch();
 
   return (
-    <Table aria-label="Example table with dynamic content">
-      <TableHeader columns={columns}>
-        {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
-      </TableHeader>
-      <TableBody items={props.data}>
-        {(item) => (
-          <TableRow key={item.key}>
-            {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
-          </TableRow>
-        )}
-      </TableBody>
-    </Table>
+		  <Table
+			color = 'green'
+			onRowAction={(key) => dispatch(acreFilter(key))}
+			selectionMode="multiple"
+			selectionBehavior="replace">
+			  <TableHeader columns={columns}>
+			  {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+			  </TableHeader>
+			  <TableBody items={props.data}>
+	  {(item) => (
+				  <TableRow key={item.key}>
+				  {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+		  </TableRow>
+			  )}
+				  </TableBody>
+	  </Table>
   );
 }
