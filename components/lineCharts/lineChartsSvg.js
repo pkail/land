@@ -16,8 +16,11 @@ import useResizeObserver from "use-resize-observer";
 import {format} from 'd3-format';
 
 
-function LineCbartsSvg({data}) {
-	console.log('data in linecharts >>>', data)
+function LineCbartsSvg(props) {
+	console.log('props in linecharts >>>', props)
+const data = props.data;
+	console.log('data in lincharts >>>', data)
+
 const margin = 50;
   const svgRef = useRef();
   const  { ref, width=1, height=1 } = useResizeObserver();
