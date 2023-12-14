@@ -14,7 +14,8 @@ import {
 import {curveBasis} from "d3-shape";
 import useResizeObserver from "use-resize-observer";
 import {format} from 'd3-format';
-import regressionLinear from "d3-regression";
+import { regressionLinear } from "d3-regression";
+
 
 function LineCbartsSvg(props) {
 	console.log('props in linecharts >>>', props)
@@ -76,7 +77,7 @@ const margin = 50;
 		  .attr("cx", d => xScale(d.acres))
 		  .attr("cy", d => yScale(d.cost));
 
-const regression = d3.regressionLinear()
+const regression = regressionLinear()
 		  .x(d => d.acres)
 		  .y(d => d.cost)
 		  .domain(xExtent)
