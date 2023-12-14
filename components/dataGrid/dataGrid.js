@@ -24,6 +24,7 @@ const acre = useSelector(state => state.acre);
   return (
 		  <Table
 			color = 'green'
+			aria-label="Data Grid"
 			onRowAction={(key) => dispatch(acreFilter(key))}
 			selectionMode="multiple"
 			selectionBehavior="replace">

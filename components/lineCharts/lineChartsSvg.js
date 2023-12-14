@@ -14,7 +14,7 @@ import {
 import {curveBasis} from "d3-shape";
 import useResizeObserver from "use-resize-observer";
 import {format} from 'd3-format';
-
+import regressionLinear from "d3-regression";
 
 function LineCbartsSvg(props) {
 	console.log('props in linecharts >>>', props)
@@ -60,10 +60,6 @@ const margin = 50;
       .call(yAxis)
 
 
-    const dataline = line()
-      .x(d => xScale(d.acres))
-	  .y(d => yScale(d.cost))
-		.curve(curveBasis);
 
   svg.append("path")
       .attr("class", "line")
@@ -79,6 +75,57 @@ const margin = 50;
 		  .attr("r", 5)
 		  .attr("cx", d => xScale(d.acres))
 		  .attr("cy", d => yScale(d.cost));
+
+const regression = d3.regressionLinear()
+		  .x(d => d.acres)
+		  .y(d => d.cost)
+		  .domain(xExtent)
+
+let res = regression(data);
+	  console.log('res >>>', res)
+
+let x = scaleLinear().range(xExtent);
+let y = scaleLinear().range(yExtent);
+
+// const regline = line()
+// 		  .attr('x1', 3)
+// 		  .attr('y1', 200)
+// 		  .attr('x2', 10)
+// 		  .attr('y2', 300)
+// 		  .attr('class', 'regline')
+// 		  .attr("fill", "none")
+// 		  .style("stroke", "steelblue")
+// 		  .style("stroke-width", "2px");
+
+console.log('res00', xScale(res[0][0]));
+console.log('res00', yScale(res[0][1]));
+console.log('res00', xScale(res[1][0]));
+console.log('res00', yScale(res[1][1]));
+
+svg.append("line")
+    .style("stroke", "black")
+	.style("stroke-width", "2px")
+    .attr("x1", xScale(res[0][0]))
+    .attr("y1", yScale(res[0][1]))
+    .attr("x2", xScale(res[1][0]))
+    .attr("y2", yScale(res[1][1]))
+
+// let regline = line()
+// 		  .x(d => x(d[0]))
+// 		  .y(d => y(d[1]));
+// 	  console.log('regline >>>', regline)
+
+// const dataline = line()
+//       .x(d => xScale(d.acres))
+// 	  .y(d => yScale(d.cost))
+// 		.curve(curveBasis);
+
+// svg.append("path")
+// 		  // .datum(res)
+// 		  .attr("d", regline)
+// 		  .attr("fill", "none")
+// 		  .style("stroke", "steelblue")
+// 		  .style("stroke-width", "2px");
 
 	  return () => {
       svg.selectAll("*").remove();

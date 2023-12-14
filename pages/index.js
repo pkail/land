@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import LineChartsSvg from "../components/lineCharts/lineChartsSvg";
 import DataGrid from "../components/dataGrid/dataGrid";
 import { useSelector } from 'react-redux';
+import {Tabs, Tab, Card, CardBody} from "@nextui-org/react";
 
 const LineCharts = () =>  {
 
@@ -11,18 +12,32 @@ const LineCharts = () =>  {
 	console.log('data in index >>>', data)
 	return (
 		<Layout title="Cost per Acre" >
-			<div className='flex flex-col space-y-20'>
-			<div className='text-5xl'> Cost per Acre</div>
-
-			<LineChartsSvg  data = {data} />
-			<DataGrid data= {data} />
-		</div>
+    <div className="flex w-full flex-col">
+		<div className='text-5xl py-4' > Cost Calculator: $ per Acre</div>
+      <Tabs aria-label ="Options"
+	  			variant = "underlined">
+        <Tab 
+			key="Scatter Graph" title="Scatter Graph">
+          <Card>
+            <CardBody >
+				<LineChartsSvg  data = {data} />
+            </CardBody>
+          </Card>
+        </Tab>
+        <Tab key="Data Grid" title="Data Grid">
+          <Card>
+            <CardBody>
+				<DataGrid data= {data} />
+            </CardBody>
+          </Card>  
+        </Tab>
+      </Tabs>
+    </div>  
 		</Layout>
   );
 }
 
 export default LineCharts;
-
 
 // export async function getStaticProps(){
 // const res = await sql `SELECT * FROM barcharts ORDER BY year;`
