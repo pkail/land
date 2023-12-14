@@ -9,6 +9,9 @@ import {
 	tickArguments,
 	max,
 	min,
+	mean,
+	median,
+	mode,
 	extent
 } from "d3";
 import {curveBasis} from "d3-shape";
@@ -32,6 +35,7 @@ const margin = 50;
     const svg = select(svgRef.current)
 // x axis
 	  const xExtent = extent(data, d => (d.acres));
+	  const xMin = min(data, d => d.acres);
     const xScale = scaleLinear()
 	  .domain(xExtent)
       .range([margin, width-margin])
@@ -47,6 +51,7 @@ const margin = 50;
 
 // y axis
 	  const yExtent = extent(data, d => (d.cost));
+	  const yMin = min(data, d => d.cost);
 	const yScale = scaleLinear()
 	.domain(yExtent)
     .range([height-margin, margin]);
@@ -59,8 +64,6 @@ const margin = 50;
       // .style("transform", "translateX(width)")
 	  .style("font-size","2.5vh")
       .call(yAxis)
-
-
 
   svg.append("path")
       .attr("class", "line")
@@ -83,25 +86,6 @@ const regression = regressionLinear()
 		  .domain(xExtent)
 
 let res = regression(data);
-	  console.log('res >>>', res)
-
-let x = scaleLinear().range(xExtent);
-let y = scaleLinear().range(yExtent);
-
-// const regline = line()
-// 		  .attr('x1', 3)
-// 		  .attr('y1', 200)
-// 		  .attr('x2', 10)
-// 		  .attr('y2', 300)
-// 		  .attr('class', 'regline')
-// 		  .attr("fill", "none")
-// 		  .style("stroke", "steelblue")
-// 		  .style("stroke-width", "2px");
-
-console.log('res00', xScale(res[0][0]));
-console.log('res00', yScale(res[0][1]));
-console.log('res00', xScale(res[1][0]));
-console.log('res00', yScale(res[1][1]));
 
 svg.append("line")
     .style("stroke", "black")
@@ -111,23 +95,29 @@ svg.append("line")
     .attr("x2", xScale(res[1][0]))
     .attr("y2", yScale(res[1][1]))
 
-// let regline = line()
-// 		  .x(d => x(d[0]))
-// 		  .y(d => y(d[1]));
-// 	  console.log('regline >>>', regline)
+	  const meanCost = mean(data, d => d.cost)
+	  console.log('meanCost >>>', meanCost)
 
-// const dataline = line()
-//       .x(d => xScale(d.acres))
-// 	  .y(d => yScale(d.cost))
-// 		.curve(curveBasis);
+svg.append("line")
+    .style("stroke", "red")
+	.style("stroke-width", "2px")
+	.style("stroke-dasharray", ("3, 3"))
+	.attr("x1", xScale(xMin))
+    .attr("y1", yScale(meanCost))
+	.attr("x1", xScale(yMin))
+    .attr("y2", yScale(meanCost));
 
-// svg.append("path")
-// 		  // .datum(res)
-// 		  .attr("d", regline)
-// 		  .attr("fill", "none")
-// 		  .style("stroke", "steelblue")
-// 		  .style("stroke-width", "2px");
+	  const medianCost = median(data, d => d.cost)
+	  console.log('medianCost >>>', medianCost)
 
+svg.append("line")
+    .style("stroke", "blue")
+	.style("stroke-dasharray", ("3, 3"))
+	.style("stroke-width", "2px")
+	.attr("x1", xScale(xMin))
+    .attr("y1", yScale(medianCost))
+	.attr("x1", xScale(yMin))
+    .attr("y2", yScale(medianCost));
 	  return () => {
       svg.selectAll("*").remove();
 	  }
