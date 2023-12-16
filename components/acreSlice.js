@@ -8,9 +8,10 @@ import remove from 'lodash.remove';
 
 // var  persistedValues = (typeof(localStorageState) === 'undefined') ? values : localStorageState.values;
 
-	acreValues.forEach((item) => item.cost = Number(item.PRICE.replace(/[^0-9]/g, "")));
+	acreValues.forEach((item) => item.cost = Number(item.PRICE.replace(/[^0-9]/g, ""))/(item.ACREAGE * 100));
 	acreValues.forEach((item) => item.acres = item.ACREAGE);
-acreValues.forEach((item, index) => item.key = index);
+	// acreValues.forEach((item) => item.cost = item.cost/item.acres);
+	acreValues.forEach((item, index) => item.key = index);
 
 const acreSlice = createSlice({
 	name: 'acre',

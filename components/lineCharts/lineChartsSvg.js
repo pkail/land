@@ -41,7 +41,8 @@ const margin = 50;
       .range([margin, width-margin])
     const xAxis = axisBottom(xScale)
 		.ticks(data.length)
-		.tickFormat(format('0000'))
+		// .tickFormat(format('0000'))
+		.ticks(20)
 		.tickSize(12)
 
 	  svg .append("g")
@@ -60,7 +61,7 @@ const margin = 50;
 	  .ticks(5)
 
 	  svg .append("g")
-	  .attr("transform", "translate(" + margin + ", 0)")
+	  .attr("transform", "translate(" + 2.5*margin + ", 0)")
       // .style("transform", "translateX(width)")
 	  .style("font-size","2.5vh")
       .call(yAxis)
