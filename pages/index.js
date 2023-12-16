@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-// import { values }  from "../components/lineCharts/barChartsData";
+import { acreValues }  from "../components/lineCharts/acreData";
 import Layout from '../components/Layout';
 import LineChartsSvg from "../components/lineCharts/lineChartsSvg";
 import DataGrid from "../components/dataGrid/dataGrid";
@@ -9,7 +9,8 @@ import {Tabs, Tab, Card, CardBody} from "@nextui-org/react";
 const LineCharts = () =>  {
 
 	const data = useSelector(state => state.acre);
-	console.log('data in index >>>', data)
+
+	console.log('acreValues >>>', acreValues)
 	return (
 		<Layout title="Cost per Acre" >
     <div className="flex w-full flex-col">
@@ -32,7 +33,7 @@ const LineCharts = () =>  {
           </Card>  
         </Tab>
       </Tabs>
-    </div>  
+    </div>
 		</Layout>
   );
 }
