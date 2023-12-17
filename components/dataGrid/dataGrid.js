@@ -2,23 +2,43 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyV
 import { useSelector, useDispatch } from 'react-redux';
 import { acreFilter } from '../acreSlice';
 
-const colors = ["default", "primary", "secondary", "success", "warning", "danger"];
 const columns = [
   {
     key: "acres",
     label: "Acres",
   },
   {
-    key: "cost",
+    key: "price",
     label: "Cost",
+  },
+  {
+    key: "cost",
+    label: "Cost/acre",
+  },
+{
+    key: "ADDRESS",
+    label: "Address",
+  },
+{
+    key: "CITY",
+    label: "City",
+  },
+{
+    key: "STATE",
+    label: "State",
+  },
+{
+    key: "ZIP",
+    label: "ZIP",
+  },
+{
+    key: "URL (SEE https:",
+    label: "URL",
   }
 ];
 
 export default function DataGrid(props) {
-	console.log('props >>>', props)
-	console.log('props.data >>>', props.data)
 const acre = useSelector(state => state.acre);
-	console.log('acre in datagrid ', acre)
 	const dispatch = useDispatch();
 
   return (

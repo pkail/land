@@ -105,7 +105,7 @@ export const acreValues = [
    "$": {
       "ACRE": "$277,207.65 "
    },
-   "URL (SEE https:": []
+	 "URL (SEE https:": "https://www.whatever.com"
 },
  {
    "ADDRESS": "2155 Two Sisters Dr",

@@ -2,6 +2,8 @@ import { useState, useEffect, useMemo } from "react";
 import { acreValues }  from "../components/lineCharts/acreData";
 import Layout from '../components/Layout';
 import LineChartsSvg from "../components/lineCharts/lineChartsSvg";
+// import FileUpload from "../components/fileUpload/fileUpload";
+import CSVReader from "../components/fileUpload/csvReader";
 import DataGrid from "../components/dataGrid/dataGrid";
 import { useSelector } from 'react-redux';
 import {Tabs, Tab, Card, CardBody} from "@nextui-org/react";
@@ -30,7 +32,14 @@ const LineCharts = () =>  {
             <CardBody>
 				<DataGrid data= {data} />
             </CardBody>
-          </Card>  
+          </Card>
+        </Tab>
+        <Tab key="File Upload" title="File Upload">
+          <Card>
+            <CardBody>
+				<CSVReader />
+            </CardBody>
+          </Card>
         </Tab>
       </Tabs>
     </div>

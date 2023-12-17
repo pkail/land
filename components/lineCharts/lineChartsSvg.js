@@ -36,9 +36,10 @@ const margin = 50;
 // x axis
 	  const xExtent = extent(data, d => (d.acres));
 	  const xMin = min(data, d => d.acres);
+	  const xMax = max(data, d => d.acres);
     const xScale = scaleLinear()
 	  .domain(xExtent)
-      .range([margin, width-margin])
+      .range([2.5*margin, width-margin])
     const xAxis = axisBottom(xScale)
 		.ticks(data.length)
 		// .tickFormat(format('0000'))
@@ -58,7 +59,7 @@ const margin = 50;
     .range([height-margin, margin]);
 
     const yAxis = axisLeft(yScale)
-	  .ticks(5)
+	  .ticks(10)
 
 	  svg .append("g")
 	  .attr("transform", "translate(" + 2.5*margin + ", 0)")
@@ -105,7 +106,7 @@ svg.append("line")
 	.style("stroke-dasharray", ("3, 3"))
 	.attr("x1", xScale(xMin))
     .attr("y1", yScale(meanCost))
-	.attr("x1", xScale(yMin))
+	.attr("x1", xScale(xMax))
     .attr("y2", yScale(meanCost));
 
 	  const medianCost = median(data, d => d.cost)
@@ -117,7 +118,7 @@ svg.append("line")
 	.style("stroke-width", "2px")
 	.attr("x1", xScale(xMin))
     .attr("y1", yScale(medianCost))
-	.attr("x1", xScale(yMin))
+	.attr("x1", xScale(xMax))
     .attr("y2", yScale(medianCost));
 	  return () => {
       svg.selectAll("*").remove();
