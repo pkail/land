@@ -1,4 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useSelector} from 'react-redux';
+import remove from 'lodash.remove';
 import {
 	select,
 	line,
@@ -14,7 +16,6 @@ import {
 	mode,
 	extent
 } from "d3";
-import {curveBasis} from "d3-shape";
 import useResizeObserver from "use-resize-observer";
 import {format} from 'd3-format';
 import { regressionLinear } from "d3-regression";
@@ -22,8 +23,15 @@ import { regressionLinear } from "d3-regression";
 
 function LineCbartsSvg(props) {
 	console.log('props in linecharts >>>', props)
-const data = props.data;
-	console.log('data in lincharts >>>', data)
+const unfilteredData = props.data;
+	console.log('unfilteredData >>>', unfilteredData)
+	const selectedRange = useSelector(state => state.range);
+	console.log('selectedRange >>>', selectedRange)
+	console.log('unfilteredData before filter>>>', unfilteredData)
+	const filteredData = unfilteredData.filter(item => item.acres > selectedRange[0]);
+	console.log('filteredData >>>', filteredData)
+	const data = filteredData.filter(item => item.acres < selectedRange[1]);
+	console.log('data >>>', data)
 
 const margin = 50;
   const svgRef = useRef();

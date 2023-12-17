@@ -12,9 +12,9 @@ export default function LineChartsSidePanel(props) {
     <Slider 
       label="Acre Range"
       step={0.1}
-      minValue={selectedRange[0]}
-      maxValue={selectedRange[1]}
-      defaultValue={[100, 500]}
+      minValue={0}
+      maxValue={100}
+      defaultValue={[selectedRange[0], selectedRange[1]]}
       className="max-w-md"
 	  onChangeEnd={(value) => dispatch(range(value))}
     />
