@@ -7,7 +7,7 @@ import remove from 'lodash.remove';
 
 const rangeSlice = createSlice({
 	name: 'range',
-	initialState: [0,100],
+	initialState: [0,40],
 	reducers: {range(state, action) {return action.payload}}
 	})
 

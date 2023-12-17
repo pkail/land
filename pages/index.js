@@ -24,7 +24,7 @@ const LineCharts = () =>  {
           <Card>
             <CardBody >
 				<LineChartsSvg  data = {data} />
-				<LineChartsSidePanel />
+				<LineChartsSidePanel data = {data} />
             </CardBody>
           </Card>
         </Tab>
