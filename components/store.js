@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import acreReducer from './acreSlice';
+import rangeReducer from './rangeSlice';
 import {createWrapper} from 'next-redux-wrapper';
 import logger from "redux-logger";
 
 
 const makeStore = () => configureStore( {reducer: {
-								acre: acreReducer
+								acre: acreReducer,
+								range: rangeReducer
 							},
 								middleware: (getDefaultMiddleware) =>
 								getDefaultMiddleware().concat(logger)

@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { acreValues }  from "../components/lineCharts/acreData";
 import Layout from '../components/Layout';
 import LineChartsSvg from "../components/lineCharts/lineChartsSvg";
+import LineChartsSidePanel from "../components/lineCharts/lineChartsSidePanel";
 // import FileUpload from "../components/fileUpload/fileUpload";
 import CSVReader from "../components/fileUpload/csvReader";
 import DataGrid from "../components/dataGrid/dataGrid";
@@ -12,7 +13,6 @@ const LineCharts = () =>  {
 
 	const data = useSelector(state => state.acre);
 
-	console.log('acreValues >>>', acreValues)
 	return (
 		<Layout title="Cost per Acre" >
     <div className="flex w-full flex-col">
@@ -24,6 +24,7 @@ const LineCharts = () =>  {
           <Card>
             <CardBody >
 				<LineChartsSvg  data = {data} />
+				<LineChartsSidePanel />
             </CardBody>
           </Card>
         </Tab>
