@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
+    "@react-stately/data": "^3.11.0",
     "@reduxjs/toolkit": "^2.0.1",
     "@tailwindcss/typography": "^0.5.10",
     "d3": "^7.8.5",

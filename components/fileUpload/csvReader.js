@@ -13,7 +13,7 @@ export default function CSVReader() {
         console.log(results);
 		dispatch(acreFilter(results))
       }}
-config={{header: true}}
+		config={{delimiter: ",", header: false}}
     >
       {({
         getRootProps,
@@ -39,3 +39,4 @@ config={{header: true}}
     </CSVReader>
   );
 }
+// columns: ["ADDRESS", "CITY", "STATE", "ZIP", "PRICE", "ACREAGE", "$/ACRE", "URL"}

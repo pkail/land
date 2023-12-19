@@ -14,7 +14,8 @@ import {
 	mean,
 	median,
 	mode,
-	extent
+	extent,
+	deviation
 } from "d3";
 import useResizeObserver from "use-resize-observer";
 import {format} from 'd3-format';
@@ -22,16 +23,23 @@ import { regressionLinear } from "d3-regression";
 
 
 function LineCbartsSvg(props) {
-	console.log('props in linecharts >>>', props)
+// Filter by acre
 const unfilteredData = props.data;
-	console.log('unfilteredData >>>', unfilteredData)
 	const selectedRange = useSelector(state => state.range);
-	console.log('selectedRange >>>', selectedRange)
-	console.log('unfilteredData before filter>>>', unfilteredData)
 	const filteredData = unfilteredData.filter(item => item.acres > selectedRange[0]);
-	console.log('filteredData >>>', filteredData)
-	const data = filteredData.filter(item => item.acres < selectedRange[1]);
+	const doubleFilteredData = filteredData.filter(item => item.acres < selectedRange[1]);
+	console.log('doubleFilteredData >>>', doubleFilteredData)
+
+// Filter by difference from mean
+	const dataSD = deviation(unfilteredData, d => d.cost);
+	console.log('dataSD >>>', dataSD)
+const dataMean = mean(unfilteredData, d => d.cost);
+	console.log('dataMean >>>', dataMean)
+
+const outlier = useSelector(state => state.outlier);
+const data = unfilteredData.filter(item => item.cost < dataMean+(dataSD*outlier));
 	console.log('data >>>', data)
+
 
 const margin = 50;
   const svgRef = useRef();

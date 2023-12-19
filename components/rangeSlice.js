@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loadState } from './localStorage';
 import { values }  from "/components/lineCharts/barChartsData";
-import { acreValues }  from "/components/lineCharts/acreData";
 import remove from 'lodash.remove';
 
 

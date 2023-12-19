@@ -39,6 +39,7 @@ const columns = [
 
 export default function DataGrid(props) {
 const acre = useSelector(state => state.acre);
+	console.log('acre in datagrid >>>', acre)
 	const dispatch = useDispatch();
 
   return (
@@ -49,7 +50,7 @@ const acre = useSelector(state => state.acre);
 			selectionMode="multiple"
 			selectionBehavior="replace">
 			  <TableHeader columns={columns}>
-			  {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+				  {(column) => <TableColumn key={column.key} >{column.label}</TableColumn>}
 			  </TableHeader>
 			  <TableBody items={props.data}>
 	  {(item) => (
