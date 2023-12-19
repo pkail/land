@@ -13,7 +13,6 @@ import {
 	min,
 	mean,
 	median,
-	mode,
 	extent,
 	deviation
 } from "d3";

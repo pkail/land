@@ -24,6 +24,10 @@ const LineCharts = () =>  {
           <Card>
             <CardBody >
 				<LineChartsSvg  data = {data} />
+            </CardBody>
+          </Card>
+          <Card>
+            <CardBody >
 				<LineChartsSidePanel data = {data} />
             </CardBody>
           </Card>
