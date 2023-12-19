@@ -5,6 +5,7 @@ import { acreValues }  from "/components/lineCharts/acreData";
 import remove from 'lodash.remove';
 
 // const localStorageState = loadState()
+// console.log('localStorageState in AcreSlice >>>', localStorageState)
 
 // var  persistedValues = (typeof(localStorageState) === 'undefined') ? values : localStorageState.values;
 

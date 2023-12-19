@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import acreReducer from './acreSlice';
+import dataReducer from './dataSlice';
 import outlierReducer from './outlierSlice';
 import rangeReducer from './rangeSlice';
 import {createWrapper} from 'next-redux-wrapper';

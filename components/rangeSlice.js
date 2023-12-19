@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { values }  from "/components/lineCharts/barChartsData";
-import remove from 'lodash.remove';
 
 
 const rangeSlice = createSlice({
