@@ -12,6 +12,7 @@ import {Tabs, Tab, Card, CardBody} from "@nextui-org/react";
 const LineCharts = () =>  {
 
 	const data = useSelector(state => state.acre);
+	console.log('data in index >>>', data)
 
 	return (
 		<Layout title="Cost per Acre" >

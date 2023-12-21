@@ -9,6 +9,7 @@ import {
 	median,
 	mean
 } from "d3";
+import { regressionLinear } from "d3-regression";
 
 export default function LineChartsSidePanel(props) {
 	console.log('props inside slider>>>', props)
@@ -23,6 +24,14 @@ export default function LineChartsSidePanel(props) {
 	console.log('max >>>', selectedRange[1])
 	  const medianCost = median(props.data, d => d.cost);
 	  const meanCost = Math.trunc(mean(props.data, d => d.cost));
+
+
+const regression = regressionLinear()
+					.x(d => d.acres)
+					.y(d => d.cost);
+const res = regression(props.data);
+
+
   return (
 	  <div className="pl-12">
 		  <Slider 
@@ -34,7 +43,7 @@ export default function LineChartsSidePanel(props) {
 			  className="max-w-md"
 			  onChangeEnd={(value) => dispatch(range(value))}
 	  />
-		  <Slider 
+		  <Slider
 			  label="Outliers"
 			  step={0.1}
 			  minValue={0}
@@ -43,9 +52,13 @@ export default function LineChartsSidePanel(props) {
 			  className="max-w-md"
 			  onChangeEnd={(value) => dispatch(outlier(value))}
 	  />
- <div className="flex gap-4">
+ <div className="flex gap-4 py-8">
 	 <Chip color="primary">Median: {medianCost}</Chip>
 	 <Chip color="warning">Mean: {meanCost}</Chip>
+	 <Chip color="secondary">Min: {unfilteredDataMin}</Chip>
+	 <Chip color="secondary">Max: {unfilteredDataMax}</Chip>
+	 <Chip color="danger">Regression a: {Math.trunc(res.a)}</Chip>
+	 <Chip color="danger">Regression b: {Math.trunc(res.b)}</Chip>
     </div>
 	  </div>
   );

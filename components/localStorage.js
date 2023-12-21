@@ -3,7 +3,7 @@
 
 export const loadState = () => {
   try {
-    const serializedState = localStorage.getItem('state');
+    const serializedState = localStorage.getItem('csvData');
     if (serializedState === null) {
       return undefined;
     }
