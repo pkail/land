@@ -7,6 +7,7 @@ import { range } from '../rangeSlice';
 import { store } from '../store';
 import useLocalStorageState from 'use-local-storage-state'
 
+
 // const dispatch = useDispatch();
 
 	// const convertToJSON = (results) =>
@@ -67,18 +68,18 @@ setcsvData(acreValues);
         getRemoveFileProps,
       }) => (
         <>
-          <div >
-            <button type='button' {...getRootProps()} >
+          <div style = {{display: 'flex', flexDirection: 'row', marginBottom: 10}}>
+			  <button type='button' style={{width: '20%', color: 'white', backgroundColor: 'green'}} {...getRootProps()} >
               Browse file
             </button>
-            <div>
+            <div style={{border: '1px solid #ccc', height: 45, lineHeight: 2.5, paddingLeft: 10, width: '30%'}}>
               {acceptedFile && acceptedFile.name}
             </div>
-            <button {...getRemoveFileProps()} >
+			  <button  style={{ borderRadius: 0, padding: '0 20px', backgroundColor: 'red', color: 'white'}}	{...getRemoveFileProps()} >
               Remove
             </button>
           </div>
-          <ProgressBar  />
+          <ProgressBar  style={{backgroundColor: 'yellow'}} />
         </>
       )}
     </CSVReader>

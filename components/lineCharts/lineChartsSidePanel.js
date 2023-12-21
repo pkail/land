@@ -12,17 +12,16 @@ import {
 import { regressionLinear } from "d3-regression";
 
 export default function LineChartsSidePanel(props) {
-	console.log('props inside slider>>>', props)
-	  const unfilteredDataMin = min(props.unfilteredData, d => d.acres);
-	  const unfilteredDataMax = max(props.unfilteredData, d => d.acres);
-	console.log('unfilteredDataMax >>>', unfilteredDataMax)
+	  const tripleFilteredMin = min(props.tripleFilteredData, d => d.acres);
+	  const tripleFilteredMax = max(props.tripleFilteredData, d => d.acres);
+	  const unfilteredMin = min(props.unfilteredData, d => d.acres);
+	  const unfilteredMax = max(props.unfilteredData, d => d.acres);
 
 	const dispatch = useDispatch();
 	const selectedRange = useSelector(state => state.range);
-	console.log('min >>>', selectedRange[0])
-	console.log('max >>>', selectedRange[1])
 	  const medianCost = median(props.tripleFilteredData, d => d.cost);
 	  const meanCost = Math.trunc(mean(props.tripleFilteredData, d => d.cost));
+	  const numberItems = props.tripleFilteredData.length;
 
 
 const regression = regressionLinear()
@@ -32,34 +31,37 @@ const res = regression(props.tripleFilteredData);
 
 
   return (
-	  <div className="pl-12">
-		  <Slider 
-			  label="Acre Range"
-			  step={0.1}
-			  minValue={unfilteredDataMin}
-			  maxValue={unfilteredDataMax}
-			  defaultValue={[selectedRange[0], selectedRange[1]]}
-			  className="max-w-md"
-			  onChangeEnd={(value) => dispatch(range(value))}
-	  />
-		  <Slider
-			  label="Outliers"
-			  step={0.1}
-			  minValue={0}
-			  maxValue={3}
-			  defaultValue={3}
-			  className="max-w-md"
-			  onChangeEnd={(value) => dispatch(outlier(value))}
-	  />
- <div className="flex gap-4 py-8">
-	 <Chip color="primary">Median: {medianCost}</Chip>
-	 <Chip color="warning">Mean: {meanCost}</Chip>
-	 <Chip color="secondary">Min: {unfilteredDataMin}</Chip>
-	 <Chip color="secondary">Max: {unfilteredDataMax}</Chip>
-	 <Chip color="danger">Regression a: {Math.trunc(res.a)}</Chip>
-	 <Chip color="danger">Regression b: {Math.trunc(res.b)}</Chip>
+<div className="pl-12y">
+	<div className="pl-12 py-8">
+	<Slider
+		label="Acre Range"
+		step={0.1}
+		minValue={unfilteredMin}
+		maxValue={unfilteredMax}
+		defaultValue={[selectedRange[0], selectedRange[1]]}
+		className="max-w-md"
+		onChangeEnd={(value) => dispatch(range(value))}
+	/>
+	<Slider
+		label="Outliers"
+		step={0.1}
+		minValue={0}
+		maxValue={3}
+		defaultValue={3}
+		className="max-w-md"
+		onChangeEnd={(value) => dispatch(outlier(value))}
+	/>
+	</div>
+<div className="flex gap-4 py-4">
+	 <Chip color="success" size='lg'>Number of Items: {numberItems}</Chip>
+	 <Chip color="danger" size='lg'>Median: {medianCost}</Chip>
+	 <Chip color="primary" size='lg'>Mean: {meanCost}</Chip>
+	 <Chip color="secondary" size='lg'>Lowest: {tripleFilteredMin}</Chip>
+	 <Chip color="secondary" size='lg'>Highest: {tripleFilteredMax}</Chip>
+	 <Chip color="secondary" size='lg'>Regression a: {Math.trunc(res.a)}</Chip>
+	 <Chip color="secondary" size='lg'>Regression b: {Math.trunc(res.b)}</Chip>
     </div>
-	  </div>
+    </div>
   );
 }
 

@@ -39,18 +39,18 @@ const tripleFilteredData = doubleFilteredData.filter(item => item.cost < dataMea
 		<div className='text-5xl py-4' > Cost Calculator: $ per Acre</div>
       <Tabs aria-label ="Options"
 	  			variant = "underlined">
-        <Tab 
+        <Tab
 			key="Scatter Graph" title="Scatter Graph">
           <Card>
-            <CardBody >
-				<LineChartsSvg  tripleFilteredData = {tripleFilteredData} />
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody >
-				<LineChartsSidePanel tripleFilteredData = {tripleFilteredData} unfilteredData = {unfilteredData} />
-            </CardBody>
-          </Card>
+				  <CardBody >
+				  <LineChartsSvg  tripleFilteredData = {tripleFilteredData} />
+						  </CardBody>
+			  </Card>
+					  <Card>
+						  <CardBody >
+						  <LineChartsSidePanel tripleFilteredData = {tripleFilteredData} unfilteredData = {unfilteredData} />
+						  </CardBody>
+					  </Card>
         </Tab>
         <Tab key="Data Grid" title="Data Grid">
           <Card>
