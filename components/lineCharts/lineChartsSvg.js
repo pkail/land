@@ -23,22 +23,23 @@ import { regressionLinear } from "d3-regression";
 
 function LineCbartsSvg(props) {
 // Filter by acre
-const unfilteredData = props.data;
-	console.log('unfilteredData in linchartsvg>>>', unfilteredData)
-	const selectedRange = useSelector(state => state.range);
-	const filteredData = unfilteredData.filter(item => item.acres > selectedRange[0]);
-	const doubleFilteredData = filteredData.filter(item => item.acres < selectedRange[1]);
-	console.log('doubleFilteredData >>>', doubleFilteredData)
+// const unfilteredData = props.data;
+const data = props.tripleFilteredData;
+	// console.log('unfilteredData in linchartsvg>>>', unfilteredData)
+	// const selectedRange = useSelector(state => state.range);
+	// const filteredData = unfilteredData.filter(item => item.acres > selectedRange[0]);
+	// const doubleFilteredData = filteredData.filter(item => item.acres < selectedRange[1]);
+	// console.log('doubleFilteredData >>>', doubleFilteredData)
 
-// Filter by difference from mean
-	const dataSD = deviation(unfilteredData, d => d.cost);
-	console.log('dataSD >>>', dataSD)
-const dataMean = mean(unfilteredData, d => d.cost);
-	console.log('dataMean >>>', dataMean)
+// // Filter by difference from mean
+	// const dataSD = deviation(unfilteredData, d => d.cost);
+	// console.log('dataSD >>>', dataSD)
+// const dataMean = mean(unfilteredData, d => d.cost);
+	// console.log('dataMean >>>', dataMean)
 
-const outlier = useSelector(state => state.outlier);
-const data = doubleFilteredData.filter(item => item.cost < dataMean+(dataSD*outlier));
-	console.log('data in linechartsvg >>>', data)
+// const outlier = useSelector(state => state.outlier);
+// const data = doubleFilteredData.filter(item => item.cost < dataMean+(dataSD*outlier));
+	// console.log('data in linechartsvg >>>', data)
 
 
 const margin = 50;

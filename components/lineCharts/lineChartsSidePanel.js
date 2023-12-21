@@ -13,23 +13,22 @@ import { regressionLinear } from "d3-regression";
 
 export default function LineChartsSidePanel(props) {
 	console.log('props inside slider>>>', props)
-	  const unfilteredDataMin = min(props.data, d => d.acres);
-	console.log('unfilteredDataMin >>>', unfilteredDataMin)
-	  const unfilteredDataMax = max(props.data, d => d.acres);
+	  const unfilteredDataMin = min(props.unfilteredData, d => d.acres);
+	  const unfilteredDataMax = max(props.unfilteredData, d => d.acres);
 	console.log('unfilteredDataMax >>>', unfilteredDataMax)
 
 	const dispatch = useDispatch();
 	const selectedRange = useSelector(state => state.range);
 	console.log('min >>>', selectedRange[0])
 	console.log('max >>>', selectedRange[1])
-	  const medianCost = median(props.data, d => d.cost);
-	  const meanCost = Math.trunc(mean(props.data, d => d.cost));
+	  const medianCost = median(props.tripleFilteredData, d => d.cost);
+	  const meanCost = Math.trunc(mean(props.tripleFilteredData, d => d.cost));
 
 
 const regression = regressionLinear()
 					.x(d => d.acres)
 					.y(d => d.cost);
-const res = regression(props.data);
+const res = regression(props.tripleFilteredData);
 
 
   return (

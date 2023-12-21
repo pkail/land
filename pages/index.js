@@ -8,11 +8,30 @@ import CSVReader from "../components/fileUpload/csvReader";
 import DataGrid from "../components/dataGrid/dataGrid";
 import { useSelector } from 'react-redux';
 import {Tabs, Tab, Card, CardBody} from "@nextui-org/react";
+import {
+	mean,
+	median,
+	deviation
+} from "d3";
 
 const LineCharts = () =>  {
 
-	const data = useSelector(state => state.acre);
-	console.log('data in index >>>', data)
+	const unfilteredData = useSelector(state => state.acre);
+	console.log('unfilteredData in index >>>', unfilteredData)
+	const selectedRange = useSelector(state => state.range);
+	const filteredData = unfilteredData.filter(item => item.acres > selectedRange[0]);
+	const doubleFilteredData = filteredData.filter(item => item.acres < selectedRange[1]);
+	console.log('doubleFilteredData in index >>>', doubleFilteredData)
+
+// Filter by difference from mean
+	const dataSD = deviation(unfilteredData, d => d.cost);
+	console.log('dataSD >>>', dataSD)
+const dataMean = mean(unfilteredData, d => d.cost);
+	console.log('dataMean >>>', dataMean)
+
+const outlier = useSelector(state => state.outlier);
+const tripleFilteredData = doubleFilteredData.filter(item => item.cost < dataMean+(dataSD*outlier));
+	console.log('tripleFilteredData in index >>>', tripleFilteredData)
 
 	return (
 		<Layout title="Cost per Acre" >
@@ -24,19 +43,19 @@ const LineCharts = () =>  {
 			key="Scatter Graph" title="Scatter Graph">
           <Card>
             <CardBody >
-				<LineChartsSvg  data = {data} />
+				<LineChartsSvg  tripleFilteredData = {tripleFilteredData} />
             </CardBody>
           </Card>
           <Card>
             <CardBody >
-				<LineChartsSidePanel data = {data} />
+				<LineChartsSidePanel tripleFilteredData = {tripleFilteredData} unfilteredData = {unfilteredData} />
             </CardBody>
           </Card>
         </Tab>
         <Tab key="Data Grid" title="Data Grid">
           <Card>
             <CardBody>
-				<DataGrid data= {data} />
+				<DataGrid data= {unfilteredData} />
             </CardBody>
           </Card>
         </Tab>
