@@ -5,9 +5,6 @@ import { wrapper } from '../components/store';
 
 export default function App({ Component, pageProps }) {
  const { store, props } = wrapper.useWrappedStore(pageProps);
-store.subscribe(() => saveState({
-		acre: store.getState().acre
-		}))
   return (
 	  <Provider store={store}>
 		  <NextUIProvider>
