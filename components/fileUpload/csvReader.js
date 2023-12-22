@@ -32,17 +32,11 @@ export default function CSVReader() {
 
 		dataJSON.unshift(obj);
 }
-console.log('dataJSON before slice >>>', dataJSON)
 const acreValues = dataJSON.slice(1, results.data.length);
-console.log('results.data.length >>>', results.data.length)
 	acreValues.forEach((item) => item.cost = Math.trunc(parseInt(item.PRICE.replace(/[^0-9]/g, ""))/(item.ACREAGE * 100)));
 	acreValues.forEach((item) => item.price = Math.trunc(parseInt(item.PRICE.replace(/[^0-9]/g, ""))/100));
 	acreValues.forEach((item) => item.acres = item.ACREAGE);
-console.log('acreValues after last foreach >>>', acreValues)
 	acreValues.forEach((item) => item.cost = item.cost/item.acres);
-console.log('acreValues at end >>>', acreValues)
-console.log('addData in callback >>>', addData)
-console.log('acre in callback >>>', acre)
 setcsvData(acreValues);
       }}
 		config={{ }}
@@ -54,7 +48,7 @@ setcsvData(acreValues);
         getRemoveFileProps,
       }) => (
         <>
-			<div style = {{display: 'flex', flexDirection: 'row', paddingTop: 60, paddingBottom: 20}}>
+			<div style = {{display: 'flex', flexDirection: 'row', paddingLeft: 20, paddingTop: 100, paddingBottom: 400}}>
 			  <button type='button' style={{width: '20%', color: 'white', backgroundColor: 'green'}} {...getRootProps()} >
               Browse file
             </button>

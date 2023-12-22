@@ -82,7 +82,7 @@ const margin = 50;
 		  .data(data)
 		  .enter()
 		  .append("circle")
-		  .attr("fill", "green")
+		  .attr("fill", "lightgreen")
 		  .attr("r", 5)
 		  .attr("cx", d => xScale(d.acres))
 		  .attr("cy", d => yScale(d.cost));
@@ -95,7 +95,7 @@ const regression = regressionLinear()
 let res = regression(data);
 
 svg.append("line")
-    .style("stroke", "black")
+    .style("stroke", "white")
 	.style("stroke-width", "2px")
     .attr("x1", xScale(res[0][0]))
     .attr("y1", yScale(res[0][1]))
@@ -118,7 +118,7 @@ svg.append("line")
 	  console.log('medianCost >>>', medianCost)
 
 svg.append("line")
-    .style("stroke", "blue")
+    .style("stroke", "lightblue")
 	.style("stroke-dasharray", ("3, 3"))
 	.style("stroke-width", "2px")
 	.attr("x1", xScale(xMin))
