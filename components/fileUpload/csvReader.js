@@ -1,27 +1,13 @@
 import { CSSProperties } from 'react';
 import { useCSVReader } from 'react-papaparse';
 import { useDispatch } from 'react-redux';
-import { addData } from '../addDataSlice';
 import { acre } from '../acreSlice';
 import { range } from '../rangeSlice';
 import { store } from '../store';
 import useLocalStorageState from 'use-local-storage-state'
 
 
-// const dispatch = useDispatch();
-
-	// const convertToJSON = (results) =>
-// {
-// const data = dataJSON.slice(1, results.data.length);
-// console.log('results.data.length >>>', results.data.length)
-// console.log('data >>>', data)
-// }
-
-
 export default function CSVReader() {
-console.log('addData >>>', addData)
-console.log('range >>>', range)
-console.log('acre >>>', acre)
   const { CSVReader } = useCSVReader();
     const [csvData, setcsvData] = useLocalStorageState('csvData', {
         defaultValue: []
@@ -68,7 +54,7 @@ setcsvData(acreValues);
         getRemoveFileProps,
       }) => (
         <>
-          <div style = {{display: 'flex', flexDirection: 'row', marginBottom: 10}}>
+			<div style = {{display: 'flex', flexDirection: 'row', paddingTop: 60, paddingBottom: 20}}>
 			  <button type='button' style={{width: '20%', color: 'white', backgroundColor: 'green'}} {...getRootProps()} >
               Browse file
             </button>

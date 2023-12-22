@@ -1,782 +1,847 @@
 export const acreValues = [
- {
-   "ADDRESS": "0000 Stoneboro Rd Unit F",
-   "CITY": "Heath Springs",
-   "STATE": "SC",
-   "ZIP": 29058,
-   "PRICE": "$35,000.00 ",
-   "ACREAGE": 4,
-   "$": {
-      "ACRE": "$8,750.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "0 Pine Forest Dr",
-   "CITY": "Van Wyck",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$232,500.00 ",
-   "ACREAGE": 4,
-   "$": {
-      "ACRE": "$58,125.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "W Rebound Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$232,500.00 ",
-   "ACREAGE": 4,
-   "$": {
-      "ACRE": "$58,125.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "TRACT 3: 301 Youngs Bnd",
-   "CITY": "Kershaw",
-   "STATE": "SC",
-   "ZIP": 29067,
-   "PRICE": "$42,500.00 ",
-   "ACREAGE": 4,
-   "$": {
-      "ACRE": "$10,582.73 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "000 Cross Creek Estates Rd #3",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$215,000.00 ",
-   "ACREAGE": 4,
-   "$": {
-      "ACRE": "$53,217.94 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "Cross Creek Estates Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$215,000.00 ",
-   "ACREAGE": 4,
-   "$": {
-      "ACRE": "$53,217.94 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "00 Atlas Ln",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$30,000.00 ",
-   "ACREAGE": 4.4,
-   "$": {
-      "ACRE": "$6,818.18 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "4124 Locker Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$95,000.00 ",
-   "ACREAGE": 4.7,
-   "$": {
-      "ACRE": "$20,042.23 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "9571 Charlotte Hwy",
-   "CITY": "Indian Land",
-   "STATE": "SC",
-   "ZIP": 29707,
-   "PRICE": "$1,350,000.00 ",
-   "ACREAGE": 4.9,
-   "$": {
-      "ACRE": "$277,207.65 "
-   },
-	 "URL (SEE https:": "https://www.whatever.com"
-},
- {
-   "ADDRESS": "2155 Two Sisters Dr",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$215,000.00 ",
-   "ACREAGE": 5,
-   "$": {
-      "ACRE": "$43,000.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "0000 Green Pond Rd",
-   "CITY": "Indian Land",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$250,000.00 ",
-   "ACREAGE": 5,
-   "$": {
-      "ACRE": "$50,000.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "1398 Hershel Plyler Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$83,700.00 ",
-   "ACREAGE": 5,
-   "$": {
-      "ACRE": "$16,740.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "2155 Two Sisters Dr Unit B10",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$215,000.00 ",
-   "ACREAGE": 5,
-   "$": {
-      "ACRE": "$43,000.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "Pageland Hwy",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$120,000.00 ",
-   "ACREAGE": 5,
-   "$": {
-      "ACRE": "$24,000.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "10925 Pettus Farm Rd",
-   "CITY": "Indian Land",
-   "STATE": "SC",
-   "ZIP": 29707,
-   "PRICE": "$535,862.00 ",
-   "ACREAGE": 5.2,
-   "$": {
-      "ACRE": "$103,050.38 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "523 Sunset Cir",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$259,000.00 ",
-   "ACREAGE": 5.4,
-   "$": {
-      "ACRE": "$47,962.96 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "9240 Maggie Robinson Rd",
-   "CITY": "Waxhaw",
-   "STATE": "NC",
-   "ZIP": 28173,
-   "PRICE": "$185,000.00 ",
-   "ACREAGE": 5.6,
-   "$": {
-      "ACRE": "$32,859.79 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "00 Memorial Park Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$97,070.00 ",
-   "ACREAGE": 5.7,
-   "$": {
-      "ACRE": "$17,000.04 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "0000 Hardwood Ln",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$105,000.00 ",
-   "ACREAGE": 6,
-   "$": {
-      "ACRE": "$17,470.92 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "000 Smith Rd",
-   "CITY": "Indian Land",
-   "STATE": "SC",
-   "ZIP": 29707,
-   "PRICE": "$395,850.00 ",
-   "ACREAGE": 6.1,
-   "$": {
-      "ACRE": "$65,000.10 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "Taxahaw Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$22,000.00 ",
-   "ACREAGE": 6.5,
-   "$": {
-      "ACRE": "$3,405.57 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "00 South Wyck Dr Unit TRACT B",
-   "CITY": "Van Wyck",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$250,000.00 ",
-   "ACREAGE": 6.7,
-   "$": {
-      "ACRE": "$37,447.65 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "5560 Hwy 521 Hwy",
-   "CITY": "Van Wyck",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$750,000.00 ",
-   "ACREAGE": 7,
-   "$": {
-      "ACRE": "$106,473.82 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "0 Kirk Air Base Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$225,000.00 ",
-   "ACREAGE": 7.2,
-   "$": {
-      "ACRE": "$31,120.41 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "Obenosky Rd",
-   "CITY": "Van Wyck",
-   "STATE": "SC",
-   "ZIP": 29744,
-   "PRICE": "$165,000.00 ",
-   "ACREAGE": 7.3,
-   "$": {
-      "ACRE": "$22,758.62 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "4000 Camp Creek Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$89,900.00 ",
-   "ACREAGE": 7.3,
-   "$": {
-      "ACRE": "$12,281.43 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "0 Reid Pointe Ave",
-   "CITY": "Indian Land",
-   "STATE": "SC",
-   "ZIP": 29707,
-   "PRICE": "$529,455.00 ",
-   "ACREAGE": 7.5,
-   "$": {
-      "ACRE": "$70,500.13 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "0 Potter Rd Unit 3A-3B",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$130,000.00 ",
-   "ACREAGE": 7.6,
-   "$": {
-      "ACRE": "$17,218.54 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "799 W Brooklyn Ave",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$130,000.00 ",
-   "ACREAGE": 7.6,
-   "$": {
-      "ACRE": "$17,218.54 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "00 Musket Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$145,000.00 ",
-   "ACREAGE": 7.8,
-   "$": {
-      "ACRE": "$18,589.74 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "8 acres Camp Dr #1",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$63,000.00 ",
-   "ACREAGE": 8,
-   "$": {
-      "ACRE": "$7,875.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "New York Ave",
-   "CITY": "Kershaw",
-   "STATE": "SC",
-   "ZIP": 29067,
-   "PRICE": "$23,000.00 ",
-   "ACREAGE": 8,
-   "$": {
-      "ACRE": "$2,875.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "Camp Dr",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$63,000.00 ",
-   "ACREAGE": 8,
-   "$": {
-      "ACRE": "$7,875.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "3895 Happy Trl",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$80,000.00 ",
-   "ACREAGE": 8.1,
-   "$": {
-      "ACRE": "$9,864.38 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "8.43 Acres Honeycutt Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$93,000.00 ",
-   "ACREAGE": 8.4,
-   "$": {
-      "ACRE": "$11,026.80 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "Possum Hollow Rd",
-   "CITY": "Indian Land",
-   "STATE": "SC",
-   "ZIP": 29707,
-   "PRICE": "$216,016.00 ",
-   "ACREAGE": 9,
-   "$": {
-      "ACRE": "$24,001.78 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "0 Monroe Hwy",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$61,000.00 ",
-   "ACREAGE": 9.5,
-   "$": {
-      "ACRE": "$6,414.31 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "Blackmon Pond Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$40,000.00 ",
-   "ACREAGE": 9.7,
-   "$": {
-      "ACRE": "$4,115.23 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "1091 Rebound Rd Unit Tract E",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$275,000.00 ",
-   "ACREAGE": 10,
-   "$": {
-      "ACRE": "$27,500.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "0 Old Camden Hwy",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$90,000.00 ",
-   "ACREAGE": 10,
-   "$": {
-      "ACRE": "$8,975.77 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "000 Dusty Trail Ln",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$155,000.00 ",
-   "ACREAGE": 11.2,
-   "$": {
-      "ACRE": "$13,839.31 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "00 Laney Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$485,000.00 ",
-   "ACREAGE": 11.2,
-   "$": {
-      "ACRE": "$43,187.96 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "8565 Charlotte Hwy",
-   "CITY": "Indian Land",
-   "STATE": "SC",
-   "ZIP": 29707,
-   "PRICE": "$2,500,000.00 ",
-   "ACREAGE": 11.4,
-   "$": {
-      "ACRE": "$218,723.01 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "00 Cane Mill Rd #2",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$180,000.00 ",
-   "ACREAGE": 11.8,
-   "$": {
-      "ACRE": "$15,308.74 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "9067 Taxahaw Rd",
-   "CITY": "Kershaw",
-   "STATE": "SC",
-   "ZIP": 29067,
-   "PRICE": "$130,000.00 ",
-   "ACREAGE": 12.2,
-   "$": {
-      "ACRE": "$10,682.01 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "492 Little River Rd",
-   "CITY": "Indian Land",
-   "STATE": "SC",
-   "ZIP": 29707,
-   "PRICE": "$610,000.00 ",
-   "ACREAGE": 13.9,
-   "$": {
-      "ACRE": "$43,884.89 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "4096 Joshua Tree Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$153,000.00 ",
-   "ACREAGE": 15,
-   "$": {
-      "ACRE": "$10,200.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "00 New Hope Rd",
-   "CITY": "Heath Springs",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$155,100.00 ",
-   "ACREAGE": 15.5,
-   "$": {
-      "ACRE": "$10,000.01 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "TBD Camp Creek Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$270,300.00 ",
-   "ACREAGE": 15.9,
-   "$": {
-      "ACRE": "$17,000.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "10749 Harrisburg Rd",
-   "CITY": "Indian Land",
-   "STATE": "SC",
-   "ZIP": 29707,
-   "PRICE": "$2,128,130.00 ",
-   "ACREAGE": 17,
-   "$": {
-      "ACRE": "$125,184.12 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "00 Neill Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$180,000.00 ",
-   "ACREAGE": 17.3,
-   "$": {
-      "ACRE": "$10,392.61 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "404 Honeycutt Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$200,000.00 ",
-   "ACREAGE": 18.1,
-   "$": {
-      "ACRE": "$11,023.54 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "8724 Kristie Ln",
-   "CITY": "Indian Land",
-   "STATE": "SC",
-   "ZIP": 29707,
-   "PRICE": "$145,000.00 ",
-   "ACREAGE": 18.9,
-   "$": {
-      "ACRE": "$7,688.23 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "2001 Cramer Cir",
-   "CITY": "Indian Land",
-   "STATE": "SC",
-   "ZIP": 29707,
-   "PRICE": "$122,100.00 ",
-   "ACREAGE": 19,
-   "$": {
-      "ACRE": "$6,429.70 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "000 Van Wyck Rd",
-   "CITY": "Van Wyck",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$400,000.00 ",
-   "ACREAGE": 20.4,
-   "$": {
-      "ACRE": "$19,646.38 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "0 Fernwood Dr",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$113,500.00 ",
-   "ACREAGE": 20.6,
-   "$": {
-      "ACRE": "$5,520.43 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "4179 Cannery Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$229,000.00 ",
-   "ACREAGE": 21.4,
-   "$": {
-      "ACRE": "$10,726.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "3458 Taxahaw Rd",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$225,000.00 ",
-   "ACREAGE": 22.1,
-   "$": {
-      "ACRE": "$10,194.84 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "00 Hershel Plyler Rd Unit B",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$170,000.00 ",
-   "ACREAGE": 25,
-   "$": {
-      "ACRE": "$6,808.17 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "Rock Chimney Cir",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$50,000.00 ",
-   "ACREAGE": 25.7,
-   "$": {
-      "ACRE": "$1,941.96 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "Deertrack Cir",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$55,000.00 ",
-   "ACREAGE": 25.9,
-   "$": {
-      "ACRE": "$2,123.55 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "2525 Deertrack Cir Unit lake & boat landing",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$55,000.00 ",
-   "ACREAGE": 26,
-   "$": {
-      "ACRE": "$2,115.38 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "00 Great Falls Hwy",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$190,000.00 ",
-   "ACREAGE": 28.4,
-   "$": {
-      "ACRE": "$6,692.50 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "8308 Van Wyck Rd",
-   "CITY": "Van Wyck",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$750,000.00 ",
-   "ACREAGE": 30,
-   "$": {
-      "ACRE": "$25,000.00 "
-   },
-   "URL (SEE https:": []
-},
- {
-   "ADDRESS": "6750 Pageland Hwy",
-   "CITY": "Lancaster",
-   "STATE": "SC",
-   "ZIP": 29720,
-   "PRICE": "$310,000.00 ",
-   "ACREAGE": 37,
-   "$": {
-      "ACRE": "$8,378.38 "
-   },
-   "URL (SEE https:": []
-}
+  {
+    "ADDRESS": "6750 Pageland Hwy",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$310,000.00 ",
+    "ACREAGE": "37",
+    "COST": "$8,378.38 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/6750-Pageland-Hwy-29720/home/187382552",
+    "cost": 226.43243243243242,
+    "price": 310000,
+    "acres": "37"
+  },
+  {
+    "ADDRESS": "8308 Van Wyck Rd",
+    "CITY": "Van Wyck",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$750,000.00 ",
+    "ACREAGE": "30",
+    "COST": "$25,000.00 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/8308-Van-Wyck-Rd-29720/home/52157774",
+    "cost": 833.3333333333334,
+    "price": 750000,
+    "acres": "30"
+  },
+  {
+    "ADDRESS": "00 Great Falls Hwy",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$190,000.00 ",
+    "ACREAGE": "28.4",
+    "COST": "$6,692.50 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Great-Falls-Hwy-29720/home/52142469",
+    "cost": 235.56338028169014,
+    "price": 190000,
+    "acres": "28.4"
+  },
+  {
+    "ADDRESS": "2525 Deertrack Cir Unit lake & boat landing",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$55,000.00 ",
+    "ACREAGE": "26",
+    "COST": "$2,115.38 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/2525-Deer-Track-Cir-29720/unit-lake-boat-landing/home/177002147",
+    "cost": 81.34615384615384,
+    "price": 55000,
+    "acres": "26"
+  },
+  {
+    "ADDRESS": "Deertrack Cir",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$55,000.00 ",
+    "ACREAGE": "25.9",
+    "COST": "$2,123.55 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Deertrack-Cir-29720/home/52157764",
+    "cost": 81.96911196911198,
+    "price": 55000,
+    "acres": "25.9"
+  },
+  {
+    "ADDRESS": "Rock Chimney Cir",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$50,000.00 ",
+    "ACREAGE": "25.7",
+    "COST": "$1,941.96 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Rock-Chimney-Cir-29720/home/181481860",
+    "cost": 75.68093385214009,
+    "price": 50000,
+    "acres": "25.7"
+  },
+  {
+    "ADDRESS": "00 Hershel Plyler Rd Unit B",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$170,000.00 ",
+    "ACREAGE": "25",
+    "COST": "$6,808.17 ",
+    "URL": "https://www.redfin.com/SC/Unknown/State-Road-S-29-180-29720/unit-B/home/179412939",
+    "cost": 272,
+    "price": 170000,
+    "acres": "25"
+  },
+  {
+    "ADDRESS": "3458 Taxahaw Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$225,000.00 ",
+    "ACREAGE": "22.1",
+    "COST": "$10,194.84 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/3458-Taxahaw-Rd-29720/home/52145236",
+    "cost": 460.6334841628959,
+    "price": 225000,
+    "acres": "22.1"
+  },
+  {
+    "ADDRESS": "4179 Cannery Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$229,000.00 ",
+    "ACREAGE": "21.4",
+    "COST": "$10,726.00 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/4179-Cannery-Rd-29720/home/52158457",
+    "cost": 500.00000000000006,
+    "price": 229000,
+    "acres": "21.4"
+  },
+  {
+    "ADDRESS": "0 Fernwood Dr",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$113,500.00 ",
+    "ACREAGE": "20.6",
+    "COST": "$5,520.43 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/0-Fernwood-DR-29720/home/182732273",
+    "cost": 267.4271844660194,
+    "price": 113500,
+    "acres": "20.6"
+  },
+  {
+    "ADDRESS": "000 Van Wyck Rd",
+    "CITY": "Van Wyck",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$400,000.00 ",
+    "ACREAGE": "20.4",
+    "COST": "$19,646.38 ",
+    "URL": "https://www.redfin.com/SC/Van-Wyck/000-Van-Wyck-RD-29720/home/172233213",
+    "cost": 961.1274509803923,
+    "price": 400000,
+    "acres": "20.4"
+  },
+  {
+    "ADDRESS": "2001 Cramer Cir",
+    "CITY": "Indian Land",
+    "STATE": "SC",
+    "ZIP": "29707",
+    "PRICE": "$122,100.00 ",
+    "ACREAGE": "19",
+    "COST": "$6,429.70 ",
+    "URL": "https://www.redfin.com/SC/Indian-Land/2001-Cramer-Cir-29707/home/144692281",
+    "cost": 338.2105263157895,
+    "price": 122100,
+    "acres": "19"
+  },
+  {
+    "ADDRESS": "8724 Kristie Ln",
+    "CITY": "Indian Land",
+    "STATE": "SC",
+    "ZIP": "29707",
+    "PRICE": "$145,000.00 ",
+    "ACREAGE": "18.9",
+    "COST": "$7,688.23 ",
+    "URL": "https://www.redfin.com/SC/Indian-Land/8724-Kristie-Ln-29707/home/52170553",
+    "cost": 405.8730158730159,
+    "price": 145000,
+    "acres": "18.9"
+  },
+  {
+    "ADDRESS": "404 Honeycutt Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$200,000.00 ",
+    "ACREAGE": "18.1",
+    "COST": "$11,023.54 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/404-Honeycutt-Rd-29720/home/52166693",
+    "cost": 610.4419889502761,
+    "price": 200000,
+    "acres": "18.1"
+  },
+  {
+    "ADDRESS": "00 Neill Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$180,000.00 ",
+    "ACREAGE": "17.3",
+    "COST": "$10,392.61 ",
+    "URL": "https://www.redfin.com/SC/Unknown/Unknown-Unknown/home/52173078",
+    "cost": 601.3872832369942,
+    "price": 180000,
+    "acres": "17.3"
+  },
+  {
+    "ADDRESS": "10749 Harrisburg Rd",
+    "CITY": "Indian Land",
+    "STATE": "SC",
+    "ZIP": "29707",
+    "PRICE": "$2,128,130.00 ",
+    "ACREAGE": "17",
+    "COST": "$125,184.12 ",
+    "URL": "https://www.redfin.com/SC/Indian-Land/10749-Harrisburg-Rd-29707/home/52173248",
+    "cost": 7363.764705882353,
+    "price": 2128130,
+    "acres": "17"
+  },
+  {
+    "ADDRESS": "TBD Camp Creek Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$270,300.00 ",
+    "ACREAGE": "15.9",
+    "COST": "$17,000.00 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/TBD-Camp-Creek-Rd-29720/home/183203240",
+    "cost": 1069.1823899371068,
+    "price": 270300,
+    "acres": "15.9"
+  },
+  {
+    "ADDRESS": "00 New Hope Rd",
+    "CITY": "Heath Springs",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$155,100.00 ",
+    "ACREAGE": "15.5",
+    "COST": "$10,000.01 ",
+    "URL": "https://www.redfin.com/SC/Heath-Springs/00-New-Hope-RD-29720/home/185443517",
+    "cost": 645.5483870967741,
+    "price": 155100,
+    "acres": "15.5"
+  },
+  {
+    "ADDRESS": "4096 Joshua Tree Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$153,000.00 ",
+    "ACREAGE": "15",
+    "COST": "$10,200.00 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/4096-Joshua-Tree-Rd-29720/home/52157081",
+    "cost": 680,
+    "price": 153000,
+    "acres": "15"
+  },
+  {
+    "ADDRESS": "492 Little River Rd",
+    "CITY": "Indian Land",
+    "STATE": "SC",
+    "ZIP": "29707",
+    "PRICE": "$610,000.00 ",
+    "ACREAGE": "13.9",
+    "COST": "$43,884.89 ",
+    "URL": "https://www.redfin.com/SC/Indian-Land/492-Little-River-Rd-29707/home/52171512",
+    "cost": 3157.122302158273,
+    "price": 610000,
+    "acres": "13.9"
+  },
+  {
+    "ADDRESS": "9067 Taxahaw Rd",
+    "CITY": "Kershaw",
+    "STATE": "SC",
+    "ZIP": "29067",
+    "PRICE": "$130,000.00 ",
+    "ACREAGE": "12.2",
+    "COST": "$10,682.01 ",
+    "URL": "https://www.redfin.com/SC/Kershaw/9067-Taxahaw-Rd-29067/home/183808726",
+    "cost": 873.360655737705,
+    "price": 130000,
+    "acres": "12.2"
+  },
+  {
+    "ADDRESS": "00 Cane Mill Rd #2",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$180,000.00 ",
+    "ACREAGE": "11.8",
+    "COST": "$15,308.74 ",
+    "URL": "https://www.redfin.com/SC/Unknown/Cane-Mill-Rd-29720/unit-2/home/184678412",
+    "cost": 1292.7118644067796,
+    "price": 180000,
+    "acres": "11.8"
+  },
+  {
+    "ADDRESS": "8565 Charlotte Hwy",
+    "CITY": "Indian Land",
+    "STATE": "SC",
+    "ZIP": "29707",
+    "PRICE": "$2,500,000.00 ",
+    "ACREAGE": "11.4",
+    "COST": "$218,723.01 ",
+    "URL": "https://www.redfin.com/SC/Indian-Land/8565-Charlotte-Hwy-29707/home/85819568",
+    "cost": 19236.666666666668,
+    "price": 2500000,
+    "acres": "11.4"
+  },
+  {
+    "ADDRESS": "00 Laney Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$485,000.00 ",
+    "ACREAGE": "11.2",
+    "COST": "$43,187.96 ",
+    "URL": "https://www.redfin.com/SC/Unknown/Laney-Rd-29720/home/173175749",
+    "cost": 3866.339285714286,
+    "price": 485000,
+    "acres": "11.2"
+  },
+  {
+    "ADDRESS": "000 Dusty Trail Ln",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$155,000.00 ",
+    "ACREAGE": "11.2",
+    "COST": "$13,839.31 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Dusty-Trail-Ln-29720/home/52157030",
+    "cost": 1235.625,
+    "price": 155000,
+    "acres": "11.2"
+  },
+  {
+    "ADDRESS": "0 Old Camden Hwy",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$90,000.00 ",
+    "ACREAGE": "10",
+    "COST": "$8,975.77 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Old-Camden-Hwy-29720/home/52149622",
+    "cost": 900,
+    "price": 90000,
+    "acres": "10"
+  },
+  {
+    "ADDRESS": "1091 Rebound Rd Unit Tract E",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$275,000.00 ",
+    "ACREAGE": "10",
+    "COST": "$27,500.00 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/1091-W-Rebound-Rd-29720/unit-Tract-E/home/179790613",
+    "cost": 2750,
+    "price": 275000,
+    "acres": "10"
+  },
+  {
+    "ADDRESS": "Blackmon Pond Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$40,000.00 ",
+    "ACREAGE": "9.7",
+    "COST": "$4,115.23 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Blackmon-Pond-Rd-29720/home/183114661",
+    "cost": 425.0515463917526,
+    "price": 40000,
+    "acres": "9.7"
+  },
+  {
+    "ADDRESS": "0 Monroe Hwy",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$61,000.00 ",
+    "ACREAGE": "9.5",
+    "COST": "$6,414.31 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/0-Monroe-Hwy-29720/home/187839711",
+    "cost": 675.8947368421053,
+    "price": 61000,
+    "acres": "9.5"
+  },
+  {
+    "ADDRESS": "Possum Hollow Rd",
+    "CITY": "Indian Land",
+    "STATE": "SC",
+    "ZIP": "29707",
+    "PRICE": "$216,016.00 ",
+    "ACREAGE": "9",
+    "COST": "$24,001.78 ",
+    "URL": "https://www.redfin.com/SC/Indian-Land/Possum-Hollow-Rd-29707/home/113691297",
+    "cost": 2666.777777777778,
+    "price": 216016,
+    "acres": "9"
+  },
+  {
+    "ADDRESS": "8.43 Acres Honeycutt Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$93,000.00 ",
+    "ACREAGE": "8.4",
+    "COST": "$11,026.80 ",
+    "URL": "https://www.redfin.com/SC/Unknown/8-43-Acres-Honeycutt-Rd-29720/home/181243211",
+    "cost": 1317.9761904761904,
+    "price": 93000,
+    "acres": "8.4"
+  },
+  {
+    "ADDRESS": "3895 Happy Trl",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$80,000.00 ",
+    "ACREAGE": "8.1",
+    "COST": "$9,864.38 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/3895-Happy-Trl-29720/home/178157748",
+    "cost": 1219.2592592592594,
+    "price": 80000,
+    "acres": "8.1"
+  },
+  {
+    "ADDRESS": "Camp Dr",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$63,000.00 ",
+    "ACREAGE": "8",
+    "COST": "$7,875.00 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Camp-Dr-29720/home/52149813",
+    "cost": 984.375,
+    "price": 63000,
+    "acres": "8"
+  },
+  {
+    "ADDRESS": "New York Ave",
+    "CITY": "Kershaw",
+    "STATE": "SC",
+    "ZIP": "29067",
+    "PRICE": "$23,000.00 ",
+    "ACREAGE": "8",
+    "COST": "$2,875.00 ",
+    "URL": "https://www.redfin.com/SC/Kershaw/New-York-Ave-29067/home/52170380",
+    "cost": 359.375,
+    "price": 23000,
+    "acres": "8"
+  },
+  {
+    "ADDRESS": "8 acres Camp Dr #1",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$63,000.00 ",
+    "ACREAGE": "8",
+    "COST": "$7,875.00 ",
+    "URL": "https://www.redfin.com/SC/Unknown/8-acres-State-Road-S-29-51-29720/unit-1/home/179615477",
+    "cost": 984.375,
+    "price": 63000,
+    "acres": "8"
+  },
+  {
+    "ADDRESS": "00 Musket Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$145,000.00 ",
+    "ACREAGE": "7.8",
+    "COST": "$18,589.74 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Musket-Rd-29720/home/52166676",
+    "cost": 2383.2051282051284,
+    "price": 145000,
+    "acres": "7.8"
+  },
+  {
+    "ADDRESS": "799 W Brooklyn Ave",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$130,000.00 ",
+    "ACREAGE": "7.6",
+    "COST": "$17,218.54 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/799-W-Brooklyn-Ave-29720/home/52168197",
+    "cost": 2250.657894736842,
+    "price": 130000,
+    "acres": "7.6"
+  },
+  {
+    "ADDRESS": "0 Potter Rd Unit 3A-3B",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$130,000.00 ",
+    "ACREAGE": "7.6",
+    "COST": "$17,218.54 ",
+    "URL": "https://www.redfin.com/SC/Unknown/Potter-Rd-29720/unit-3A-3B/home/186228627",
+    "cost": 2250.657894736842,
+    "price": 130000,
+    "acres": "7.6"
+  },
+  {
+    "ADDRESS": "0 Reid Pointe Ave",
+    "CITY": "Indian Land",
+    "STATE": "SC",
+    "ZIP": "29707",
+    "PRICE": "$529,455.00 ",
+    "ACREAGE": "7.5",
+    "COST": "$70,500.13 ",
+    "URL": "https://www.redfin.com/SC/Indian-Land/Reid-Pointe-Ave-29707/home/85821594",
+    "cost": 9412.533333333333,
+    "price": 529455,
+    "acres": "7.5"
+  },
+  {
+    "ADDRESS": "4000 Camp Creek Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$89,900.00 ",
+    "ACREAGE": "7.3",
+    "COST": "$12,281.43 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/4000-Camp-Creek-Rd-29720/home/184535658",
+    "cost": 1686.986301369863,
+    "price": 89900,
+    "acres": "7.3"
+  },
+  {
+    "ADDRESS": "Obenosky Rd",
+    "CITY": "Van Wyck",
+    "STATE": "SC",
+    "ZIP": "29744",
+    "PRICE": "$165,000.00 ",
+    "ACREAGE": "7.3",
+    "COST": "$22,758.62 ",
+    "URL": "https://www.redfin.com/SC/Van-Wyck/Obenosky-Rd-29744/home/52143920",
+    "cost": 3096.1643835616437,
+    "price": 165000,
+    "acres": "7.3"
+  },
+  {
+    "ADDRESS": "0 Kirk Air Base Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$225,000.00 ",
+    "ACREAGE": "7.2",
+    "COST": "$31,120.41 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Kirk-Air-Base-Rd-29720/home/183115100",
+    "cost": 4340.277777777777,
+    "price": 225000,
+    "acres": "7.2"
+  },
+  {
+    "ADDRESS": "5560 Hwy 521 Hwy",
+    "CITY": "Van Wyck",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$750,000.00 ",
+    "ACREAGE": "7",
+    "COST": "$106,473.82 ",
+    "URL": "https://www.redfin.com/SC/Van-Wyck/5560-Hwy-521-HWY-29720/home/179482820",
+    "cost": 15306,
+    "price": 750000,
+    "acres": "7"
+  },
+  {
+    "ADDRESS": "00 South Wyck Dr Unit TRACT B",
+    "CITY": "Van Wyck",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$250,000.00 ",
+    "ACREAGE": "6.7",
+    "COST": "$37,447.65 ",
+    "URL": "https://www.redfin.com/SC/Unknown/Southwyck-Dr-29720/unit-TRACT-B/home/186425127",
+    "cost": 5569.10447761194,
+    "price": 250000,
+    "acres": "6.7"
+  },
+  {
+    "ADDRESS": "Taxahaw Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$22,000.00 ",
+    "ACREAGE": "6.5",
+    "COST": "$3,405.57 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Taxahaw-Rd-29720/home/52165543",
+    "cost": 520.6153846153846,
+    "price": 22000,
+    "acres": "6.5"
+  },
+  {
+    "ADDRESS": "000 Smith Rd",
+    "CITY": "Indian Land",
+    "STATE": "SC",
+    "ZIP": "29707",
+    "PRICE": "$395,850.00 ",
+    "ACREAGE": "6.1",
+    "COST": "$65,000.10 ",
+    "URL": "https://www.redfin.com/SC/Indian-Land/Smith-Rd-29720/home/52144491",
+    "cost": 10638.196721311477,
+    "price": 395850,
+    "acres": "6.1"
+  },
+  {
+    "ADDRESS": "0000 Hardwood Ln",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$105,000.00 ",
+    "ACREAGE": "6",
+    "COST": "$17,470.92 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Hardwood-LN-29720/home/184660487",
+    "cost": 2916.6666666666665,
+    "price": 105000,
+    "acres": "6"
+  },
+  {
+    "ADDRESS": "00 Memorial Park Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$97,070.00 ",
+    "ACREAGE": "5.7",
+    "COST": "$17,000.04 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Memorial-Park-Rd-29720/home/52151554",
+    "cost": 2987.5438596491226,
+    "price": 97070,
+    "acres": "5.7"
+  },
+  {
+    "ADDRESS": "9240 Maggie Robinson Rd",
+    "CITY": "Waxhaw",
+    "STATE": "NC",
+    "ZIP": "28173",
+    "PRICE": "$185,000.00 ",
+    "ACREAGE": "5.6",
+    "COST": "$32,859.79 ",
+    "URL": "https://www.redfin.com/NC/Waxhaw/9240-Maggie-Robinson-Rd-28173/home/43782571",
+    "cost": 5899.107142857143,
+    "price": 185000,
+    "acres": "5.6"
+  },
+  {
+    "ADDRESS": "523 Sunset Cir",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$259,000.00 ",
+    "ACREAGE": "5.4",
+    "COST": "$47,962.96 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/523-Sunset-Cir-29720/home/52154915",
+    "cost": 8881.85185185185,
+    "price": 259000,
+    "acres": "5.4"
+  },
+  {
+    "ADDRESS": "10925 Pettus Farm Rd",
+    "CITY": "Indian Land",
+    "STATE": "SC",
+    "ZIP": "29707",
+    "PRICE": "$535,862.00 ",
+    "ACREAGE": "5.2",
+    "COST": "$103,050.38 ",
+    "URL": "https://www.redfin.com/SC/Indian-Land/10925-Pettus-Farm-Rd-29707/home/52142780",
+    "cost": 19817.30769230769,
+    "price": 535862,
+    "acres": "5.2"
+  },
+  {
+    "ADDRESS": "Pageland Hwy",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$120,000.00 ",
+    "ACREAGE": "5",
+    "COST": "$24,000.00 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Pageland-Hwy-29720/home/171163705",
+    "cost": 4800,
+    "price": 120000,
+    "acres": "5"
+  },
+  {
+    "ADDRESS": "2155 Two Sisters Dr Unit B10",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$215,000.00 ",
+    "ACREAGE": "5",
+    "COST": "$43,000.00 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/2155-Two-Sisters-DR-29720/unit-B10/home/184182772",
+    "cost": 8600,
+    "price": 215000,
+    "acres": "5"
+  },
+  {
+    "ADDRESS": "1398 Hershel Plyler Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$83,700.00 ",
+    "ACREAGE": "5",
+    "COST": "$16,740.00 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/1398-Hershel-Plyler-Rd-29720/home/52172663",
+    "cost": 3348,
+    "price": 83700,
+    "acres": "5"
+  },
+  {
+    "ADDRESS": "0000 Green Pond Rd",
+    "CITY": "Indian Land",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$250,000.00 ",
+    "ACREAGE": "5",
+    "COST": "$50,000.00 ",
+    "URL": "https://www.redfin.com/SC/Indian-Land/Green-Pond-Rd-29720/home/52179821",
+    "cost": 10000,
+    "price": 250000,
+    "acres": "5"
+  },
+  {
+    "ADDRESS": "2155 Two Sisters Dr",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$215,000.00 ",
+    "ACREAGE": "5",
+    "COST": "$43,000.00 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/2155-Two-Sisters-Dr-29720/home/167889567",
+    "cost": 8600,
+    "price": 215000,
+    "acres": "5"
+  },
+  {
+    "ADDRESS": "9571 Charlotte Hwy",
+    "CITY": "Indian Land",
+    "STATE": "SC",
+    "ZIP": "29707",
+    "PRICE": "$1,350,000.00 ",
+    "ACREAGE": "4.9",
+    "COST": "$277,207.65 ",
+    "URL": "https://www.redfin.com/SC/Indian-Land/9571-Charlotte-Hwy-29707/home/52150138",
+    "cost": 56226.5306122449,
+    "price": 1350000,
+    "acres": "4.9"
+  },
+  {
+    "ADDRESS": "4124 Locker Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$95,000.00 ",
+    "ACREAGE": "4.7",
+    "COST": "$20,042.23 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/4124-Locker-Rd-29720/home/52145009",
+    "cost": 4300.425531914893,
+    "price": 95000,
+    "acres": "4.7"
+  },
+  {
+    "ADDRESS": "00 Atlas Ln",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$30,000.00 ",
+    "ACREAGE": "4.4",
+    "COST": "$6,818.18 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Atlas-Ln-29720/home/52148487",
+    "cost": 1549.5454545454545,
+    "price": 30000,
+    "acres": "4.4"
+  },
+  {
+    "ADDRESS": "Cross Creek Estates Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$215,000.00 ",
+    "ACREAGE": "4",
+    "COST": "$53,217.94 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/Cross-Creek-Estates-Rd-29720/home/113694639",
+    "cost": 13437.5,
+    "price": 215000,
+    "acres": "4"
+  },
+  {
+    "ADDRESS": "000 Cross Creek Estates Rd #3",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$215,000.00 ",
+    "ACREAGE": "4",
+    "COST": "$53,217.94 ",
+    "URL": "https://www.redfin.com/SC/Unknown/Cross-Creek-Estates-Rd-29720/unit-3/home/182276974",
+    "cost": 13437.5,
+    "price": 215000,
+    "acres": "4"
+  },
+  {
+    "ADDRESS": "TRACT 3: 301 Youngs Bnd",
+    "CITY": "Kershaw",
+    "STATE": "SC",
+    "ZIP": "29067",
+    "PRICE": "$42,500.00 ",
+    "ACREAGE": "4",
+    "COST": "$10,582.73 ",
+    "URL": "https://www.redfin.com/SC/Kershaw/301-Youngs-Bend-Rd-29067/home/175690240",
+    "cost": 2656.25,
+    "price": 42500,
+    "acres": "4"
+  },
+  {
+    "ADDRESS": "W Rebound Rd",
+    "CITY": "Lancaster",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$232,500.00 ",
+    "ACREAGE": "4",
+    "COST": "$58,125.00 ",
+    "URL": "https://www.redfin.com/SC/Lancaster/W-Rebound-Rd-29720/home/183114024",
+    "cost": 14531.25,
+    "price": 232500,
+    "acres": "4"
+  },
+  {
+    "ADDRESS": "0 Pine Forest Dr",
+    "CITY": "Van Wyck",
+    "STATE": "SC",
+    "ZIP": "29720",
+    "PRICE": "$232,500.00 ",
+    "ACREAGE": "4",
+    "COST": "$58,125.00 ",
+    "URL": "https://www.redfin.com/SC/Unknown/Pine-Forest-Dr-29720/home/186602603",
+    "cost": 14531.25,
+    "price": 232500,
+    "acres": "4"
+  },
+  {
+    "ADDRESS": "0000 Stoneboro Rd Unit F",
+    "CITY": "Heath Springs",
+    "STATE": "SC",
+    "ZIP": "29058",
+    "PRICE": "$35,000.00 ",
+    "ACREAGE": "4",
+    "COST": "$8,750.00 ",
+    "URL": "https://www.redfin.com/SC/Heath-Springs/Stoneboro-Rd-29058/unit-F/home/187799038",
+    "cost": 2187.5,
+    "price": 35000,
+    "acres": "4"
+  }
 ]

@@ -25,35 +25,23 @@ function LineCbartsSvg(props) {
 // Filter by acre
 // const unfilteredData = props.data;
 const data = props.tripleFilteredData;
-	// console.log('unfilteredData in linchartsvg>>>', unfilteredData)
-	// const selectedRange = useSelector(state => state.range);
-	// const filteredData = unfilteredData.filter(item => item.acres > selectedRange[0]);
-	// const doubleFilteredData = filteredData.filter(item => item.acres < selectedRange[1]);
-	// console.log('doubleFilteredData >>>', doubleFilteredData)
-
-// // Filter by difference from mean
-	// const dataSD = deviation(unfilteredData, d => d.cost);
-	// console.log('dataSD >>>', dataSD)
-// const dataMean = mean(unfilteredData, d => d.cost);
-	// console.log('dataMean >>>', dataMean)
-
-// const outlier = useSelector(state => state.outlier);
-// const data = doubleFilteredData.filter(item => item.cost < dataMean+(dataSD*outlier));
-	// console.log('data in linechartsvg >>>', data)
+	console.log('data >>>', data)
+	console.log('triplefiltereddata >>>', props.tripleFilteredData)
 
 
 const margin = 50;
   const svgRef = useRef();
   const  { ref, width=1, height=1 } = useResizeObserver();
-	console.log('width >>>', width)
-	console.log('height >>>', height)
 
   useEffect(() => {
     const svg = select(svgRef.current)
 // x axis
-	  const xExtent = extent(data, d => (d.acres));
+	  const xExtent = extent(data, d => d.acres);
+	  console.log('xExtent >>>', xExtent)
 	  const xMin = min(data, d => d.acres);
+	  console.log('xMin >>>', xMin)
 	  const xMax = max(data, d => d.acres);
+	  console.log('xMax >>>', xMax)
     const xScale = scaleLinear()
 	  .domain(xExtent)
       .range([2.5*margin, width-margin])
