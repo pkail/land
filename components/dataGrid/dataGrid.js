@@ -1,6 +1,7 @@
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue, RadioGroup, Radio} from "@nextui-org/react";
 import { useSelector, useDispatch } from 'react-redux';
 import { acreFilter } from '../acreSlice';
+import sortBy from 'lodash/sortBy';
 
 const columns = [
   {
@@ -42,6 +43,11 @@ const acre = useSelector(state => state.acre);
 	console.log('acre in datagrid >>>', acre)
 	const dispatch = useDispatch();
 
+// Sorting
+
+
+// sortBy(users, [function(o) { return o.user; }]);
+
   return (
 		  <Table
 			color = 'green'
@@ -50,7 +56,7 @@ const acre = useSelector(state => state.acre);
 			selectionMode="multiple"
 			selectionBehavior="replace">
 			  <TableHeader columns={columns}>
-				  {(column) => <TableColumn key={column.key} >{column.label}</TableColumn>}
+				  {(column) => <TableColumn key={column.key} allowsSorting >{column.label}</TableColumn>}
 			  </TableHeader>
 			  <TableBody items={props.data}>
 	  {(item) => (
