@@ -32,7 +32,7 @@ const columns = [
     label: "ZIP",
   },
 {
-    key: "URL (SEE https:",
+    key: "URL",
     label: "URL",
   }
 ];

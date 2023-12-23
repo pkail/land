@@ -19,6 +19,7 @@ import {
 import useResizeObserver from "use-resize-observer";
 import {format} from 'd3-format';
 import { regressionLinear } from "d3-regression";
+import d3tip from 'd3-tip';
 
 
 function LineCbartsSvg(props) {
@@ -70,22 +71,33 @@ const margin = 50;
 	  .attr("transform", "translate(" + 2.5*margin + ", 0)")
       // .style("transform", "translateX(width)")
 	  .style("font-size","2.5vh")
-      .call(yAxis)
+      .call(yAxis);
 
-  svg.append("path")
+	  svg.append("path")
       .attr("class", "line")
       .attr("fill", "none")
       .attr("stroke", "black")
 	  .attr("stroke-width", 2);
 
-  svg.selectAll("circle")
+
+// Tooltip
+var tip = d3tip()
+			.attr('class', 'd3-tip')
+		  .html((event, datum) => {return datum.acres + " acres" + "<br/>" + "$" + format(",")(datum.cost)+ "/ acre" + "<br/>" + "$" +  format(",")(datum.price)})
+	.attr("color", "white")
+	.attr("background-color", "black")
+
+const circle= svg.selectAll("circle")
 		  .data(data)
 		  .enter()
 		  .append("circle")
 		  .attr("fill", "lightgreen")
 		  .attr("r", 5)
 		  .attr("cx", d => xScale(d.acres))
-		  .attr("cy", d => yScale(d.cost));
+		  .attr("cy", d => yScale(d.cost))
+		.call(tip)
+			.on('mouseover', tip.show)
+			.on('mouseout', tip.hide)
 
 const regression = regressionLinear()
 		  .x(d => d.acres)
