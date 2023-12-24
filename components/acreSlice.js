@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { acreValues }  from "/components/lineCharts/acreData";
 import { loadState } from './localStorage';
+import remove from 'lodash.remove';
+console.log('remove >>>', remove)
 
 const localStorageState = loadState()
 console.log('localStorageState in acre slice>>>', localStorageState)
