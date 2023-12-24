@@ -12,8 +12,8 @@ import {
 import { regressionLinear } from "d3-regression";
 
 export default function LineChartsSidePanel(props) {
-	  const tripleFilteredMin = min(props.tripleFilteredData, d => d.acres);
-	  const tripleFilteredMax = max(props.tripleFilteredData, d => d.acres);
+	  const tripleFilteredMin = min(props.tripleFilteredData, d => d.cost);
+	  const tripleFilteredMax = max(props.tripleFilteredData, d => d.cost);
 	  const unfilteredMin = min(props.unfilteredData, d => d.acres);
 	  const unfilteredMax = max(props.unfilteredData, d => d.acres);
 
@@ -54,8 +54,8 @@ const res = regression(props.tripleFilteredData);
 	</div>
 <div className="flex gap-4 py-4">
 	 <Chip color="success" size='lg'>Number of Items: {numberItems}</Chip>
-	 <Chip color="danger" size='lg'>Median: {medianCost}</Chip>
-	 <Chip color="primary" size='lg'>Mean: {meanCost}</Chip>
+	 <Chip color="primary" size='lg'>Median: {medianCost}</Chip>
+	 <Chip color="danger" size='lg'>Mean: {meanCost}</Chip>
 	 <Chip color="secondary" size='lg'>Lowest: {tripleFilteredMin}</Chip>
 	 <Chip color="secondary" size='lg'>Highest: {tripleFilteredMax}</Chip>
 	 <Chip color="secondary" size='lg'>Regression a: {Math.trunc(res.a)}</Chip>
