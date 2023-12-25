@@ -2,6 +2,7 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyV
 import { useSelector, useDispatch } from 'react-redux';
 import { acreFilter } from '../acreSlice';
 import sortBy from 'lodash/sortBy';
+import Router from 'next/router'
 
 const columns = [
   {
@@ -53,6 +54,7 @@ const acre = useSelector(state => state.acre);
 			color = 'green'
 			aria-label="Data Grid"
 			onRowAction={(key) => dispatch(acreFilter(key))}
+			  onCellAction={(key) => window.open(props.data[parseInt(key)].URL)}
 			selectionMode="multiple"
 			selectionBehavior="replace">
 			  <TableHeader columns={columns}>

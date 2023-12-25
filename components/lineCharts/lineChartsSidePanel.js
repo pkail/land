@@ -3,6 +3,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import { range } from '../rangeSlice';
 import { outlier } from '../outlierSlice';
 import {Chip} from "@nextui-org/react";
+import {Input} from "@nextui-org/react";
 import {
 	max,
 	min,
@@ -58,9 +59,21 @@ const res = regression(props.tripleFilteredData);
 	 <Chip color="danger" size='lg'>Mean: {meanCost}</Chip>
 	 <Chip color="secondary" size='lg'>Lowest: {tripleFilteredMin}</Chip>
 	 <Chip color="secondary" size='lg'>Highest: {tripleFilteredMax}</Chip>
-	 <Chip color="secondary" size='lg'>Regression a: {Math.trunc(res.a)}</Chip>
-	 <Chip color="secondary" size='lg'>Regression b: {Math.trunc(res.b)}</Chip>
+	 <Chip color="secondary" size='lg'>Regression y = {Math.trunc(res.a)}x+{Math.trunc(res.b)}</Chip>
+	 {/* <Chip color="secondary" size='lg'>Regression b: {Math.trunc(res.b)}</Chip> */}
     </div>
+
+<Input
+          type="number"
+          label="Price"
+          placeholder="0.00"
+          labelPlacement="outside"
+          startContent={
+            <div className="pointer-events-none flex items-center">
+              <span className="text-default-400 text-small">$</span>
+            </div>
+          }
+        />
     </div>
   );
 }
