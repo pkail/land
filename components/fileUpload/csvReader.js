@@ -39,7 +39,7 @@ const acreValues = dataJSON.slice(1, results.data.length);
 	acreValues.forEach((item) => item.cost = item.cost/item.acres);
 setcsvData(acreValues);
       }}
-		config={{ }}
+		config={{header: false }}
     >
       {({
         getRootProps,

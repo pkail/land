@@ -33,11 +33,6 @@ const LineCharts = () =>  {
 const dataMean = mean(unfilteredData, d => d.cost);
 	console.log('dataMean >>>', dataMean)
 
-	// const dispatch = useDispatch();
-	//   const unfilteredMin = min(unfilteredData, d => d.acres);
-	//   const unfilteredMax = max(unfilteredData, d => d.acres);
-	// dispatch(range([unfilteredMin, unfilteredMax]));
-
 const outlier = useSelector(state => state.outlier);
 const tripleFilteredData = doubleFilteredData.filter(item => item.cost < dataMean+(dataSD*outlier));
 	console.log('tripleFilteredData in index >>>', tripleFilteredData)

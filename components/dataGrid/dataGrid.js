@@ -42,6 +42,8 @@ const columns = [
 export default function DataGrid(props) {
 const acre = useSelector(state => state.acre);
 	console.log('acre in datagrid >>>', acre)
+// const stringAcre =acre.map((item) => item.cost$ = "$" + item.cost);
+	console.log('acre >>>', acre)
 	const dispatch = useDispatch();
 
 // Sorting

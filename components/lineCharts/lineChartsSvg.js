@@ -22,6 +22,7 @@ import { regressionLinear } from "d3-regression";
 import d3tip from 'd3-tip';
 
 
+
 function LineCbartsSvg(props) {
 // Filter by acre
 // const unfilteredData = props.data;
@@ -96,8 +97,8 @@ const circle= svg.selectAll("circle")
 		  .attr("cx", d => xScale(d.acres))
 		  .attr("cy", d => yScale(d.cost))
 		.call(tip)
-			.on('mouseover', tip.show)
-			.on('mouseout', tip.hide)
+		  .on('mouseover', tip.show)
+		  .on('mouseout', tip.hide)
 
 const regression = regressionLinear()
 		  .x(d => d.acres)
