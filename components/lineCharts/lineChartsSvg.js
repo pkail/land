@@ -22,13 +22,10 @@ import { regressionLinear } from "d3-regression";
 import d3tip from 'd3-tip';
 
 
-
 function LineCbartsSvg(props) {
 // Filter by acre
 // const unfilteredData = props.data;
 const data = props.tripleFilteredData;
-	console.log('data >>>', data)
-	console.log('triplefiltereddata >>>', props.tripleFilteredData)
 
 
 const margin = 50;
