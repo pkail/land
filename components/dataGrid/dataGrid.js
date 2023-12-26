@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { acreFilter } from '../acreSlice';
 import sortBy from 'lodash/sortBy';
 import Router from 'next/router'
+import { useState, useCallback } from 'react';
+import {Card, CardBody, Button } from "@nextui-org/react";
+import {Link} from "@nextui-org/react";
 
 const columns = [
   {
@@ -40,24 +43,28 @@ const columns = [
 ];
 
 export default function DataGrid(props) {
-const acre = useSelector(state => state.acre);
-	console.log('acre in datagrid >>>', acre)
-// const stringAcre =acre.map((item) => item.cost$ = "$" + item.cost);
-	console.log('acre >>>', acre)
+	console.log('props >>>', props)
+	console.log('props.data >>>', props.data)
 	const dispatch = useDispatch();
+ const renderCell = useCallback((user, columnKey) => {
+    const cellValue = user[columnKey];
 
-// Sorting
-
-
-// sortBy(users, [function(o) { return o.user; }]);
+    switch (columnKey) {
+      case "URL":
+        return (
+			<Link href={cellValue} target="_blank">{cellValue}</Link>
+        );
+      default:
+        return cellValue;
+    }
+  }, []);
 
   return (
 		  <Table
 			color = 'green'
 			aria-label="Data Grid"
+			selectionMode="single"
 			onRowAction={(key) => dispatch(acreFilter(key))}
-			  onCellAction={(key) => window.open(props.data[parseInt(key)].URL)}
-			selectionMode="multiple"
 			selectionBehavior="replace">
 			  <TableHeader columns={columns}>
 				  {(column) => <TableColumn key={column.key} allowsSorting >{column.label}</TableColumn>}
@@ -65,7 +72,7 @@ const acre = useSelector(state => state.acre);
 			  <TableBody items={props.data}>
 	  {(item) => (
 				  <TableRow key={item.key}>
-				  {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+				  {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
 		  </TableRow>
 			  )}
 				  </TableBody>

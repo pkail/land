@@ -20,7 +20,6 @@ import {
 const LineCharts = () =>  {
 
 	const unfilteredData = useSelector(state => state.acre);
-	console.log('unfilteredData in index >>>', unfilteredData)
 	const selectedRange = useSelector(state => state.range);
 	console.log('selectedRange in index >>>', selectedRange)
 	const filteredData = unfilteredData.filter(item => item.acres > selectedRange[0]);
@@ -36,6 +35,7 @@ const dataMean = mean(unfilteredData, d => d.cost);
 const outlier = useSelector(state => state.outlier);
 const tripleFilteredData = doubleFilteredData.filter(item => item.cost < dataMean+(dataSD*outlier));
 	console.log('tripleFilteredData in index >>>', tripleFilteredData)
+	console.log('unfilteredData in index >>>', unfilteredData)
 
 	return (
 		<Layout title="Cost per Acre" >
