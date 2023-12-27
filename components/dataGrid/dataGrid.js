@@ -6,6 +6,7 @@ import Router from 'next/router'
 import { useState, useCallback } from 'react';
 import {Card, CardBody, Button } from "@nextui-org/react";
 import {Link} from "@nextui-org/react";
+import {format} from 'd3-format';
 
 const columns = [
   {
@@ -50,6 +51,18 @@ export default function DataGrid(props) {
     const cellValue = user[columnKey];
 
     switch (columnKey) {
+      case "cost":
+        return (
+			<>
+			${format(",")(cellValue)}
+			</>
+        );
+      case "price":
+        return (
+			<>
+			${format(",")(cellValue)}
+			</>
+        );
       case "URL":
         return (
 			<Link href={cellValue} target="_blank">{cellValue}</Link>
