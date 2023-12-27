@@ -7,6 +7,7 @@ import { useState, useCallback } from 'react';
 import {Card, CardBody, Button } from "@nextui-org/react";
 import {Link} from "@nextui-org/react";
 import {format} from 'd3-format';
+import {useAsyncList} from 'react-stately'
 
 const columns = [
   {
@@ -47,6 +48,30 @@ export default function DataGrid(props) {
 	console.log('props >>>', props)
 	console.log('props.data >>>', props.data)
 	const dispatch = useDispatch();
+  let list = useAsyncList({
+	   async load({signal}) {return {items: props.data}},
+     async sort({items, sortDescriptor}) {
+		console.log('sortDescriptor >>>', sortDescriptor)
+      return {
+        items: items.sort((a, b) => {
+          let first = a[sortDescriptor.column];
+			console.log('first >>>', first)
+          let second = b[sortDescriptor.column];
+			console.log('second >>>', second)
+          let cmp = (first < second ? -1 : 1);
+			console.log('cmp >>>', cmp)
+
+		console.log('items >>>', items)
+          // if (sortDescriptor.direction === "descending") {
+          //   cmp *= -1;
+          // }
+
+  return cmp;
+        }),
+      };
+    },
+  });
+
  const renderCell = useCallback((user, columnKey) => {
     const cellValue = user[columnKey];
 
@@ -76,13 +101,15 @@ export default function DataGrid(props) {
 		  <Table
 			color = 'green'
 			aria-label="Data Grid"
+			sortDescriptor={list.sortDescriptor}
+			onSortChange={list.sort}
 			selectionMode="single"
 			onRowAction={(key) => dispatch(acreFilter(key))}
 			selectionBehavior="replace">
 			  <TableHeader columns={columns}>
 				  {(column) => <TableColumn key={column.key} allowsSorting >{column.label}</TableColumn>}
 			  </TableHeader>
-			  <TableBody items={props.data}>
+			  <TableBody items={list.items}>
 	  {(item) => (
 				  <TableRow key={item.key}>
 				  {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
