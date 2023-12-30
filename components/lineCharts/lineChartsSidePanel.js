@@ -15,6 +15,8 @@ import { regressionLinear } from "d3-regression";
 import {format} from 'd3-format';
 
 export default function LineChartsSidePanel(props) {
+/* eslint-disable */
+	console.log('props >>>', props)
 	  const doubleFilteredMin = min(props.doubleFilteredData, d => d.cost);
 	  const doubleFilteredMax = max(props.doubleFilteredData, d => d.cost);
 	  const unfilteredMin = min(props.unfilteredData, d => d.acres);
@@ -65,5 +67,6 @@ const res = regression(props.doubleFilteredData);
 			</Card>
     </div>
   );
+/* eslint-enable */
 }
 

@@ -47,8 +47,8 @@ const margin = 50;
     const xAxis = axisBottom(xScale)
 		.ticks(data.length)
 		// .tickFormat(format('0000'))
-		.ticks(20)
-		.tickSize(12)
+		.ticks(10)
+		.tickSize(8)
 
 	  svg .append("g")
 	  .attr("transform", `translate(0,${height - margin})`)
