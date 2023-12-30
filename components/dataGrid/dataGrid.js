@@ -62,9 +62,9 @@ export default function DataGrid(props) {
 			console.log('cmp >>>', cmp)
 
 		console.log('items >>>', items)
-          // if (sortDescriptor.direction === "descending") {
-          //   cmp *= -1;
-          // }
+          if (sortDescriptor.direction === "descending") {
+            cmp *= -1;
+          }
 
   return cmp;
         }),

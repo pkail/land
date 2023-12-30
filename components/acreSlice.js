@@ -6,7 +6,7 @@ import remove from 'lodash.remove';
 const localStorageState = loadState()
 console.log('localStorageState in acre slice>>>', localStorageState)
 
-var  persistedValueswithHeader = (typeof(localStorageState) === 'undefined') ?  acreValues : localStorageState;
+var  persistedValueswithHeader = (typeof(localStorageState) === 'undefined') ?  acreValues : localStorageState.acre;
 console.log('persistedValues before slice >>>', persistedValues)
 var  persistedValues = persistedValueswithHeader.slice(0, persistedValueswithHeader.length-1);
 console.log('persistedValuesr >>>', persistedValues)

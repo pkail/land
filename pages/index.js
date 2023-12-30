@@ -17,9 +17,10 @@ import {
 	deviation
 } from "d3";
 
-const LineCharts = () =>  {
+const Index = () =>  {
 
 	const unfilteredData = useSelector(state => state.acre);
+	console.log('unfilteredData >>>', unfilteredData)
 	const selectedRange = useSelector(state => state.range);
 	console.log('selectedRange in index >>>', selectedRange)
 	const filteredData = unfilteredData.filter(item => item.acres > selectedRange[0]);
@@ -27,15 +28,15 @@ const LineCharts = () =>  {
 	console.log('doubleFilteredData in index >>>', doubleFilteredData)
 
 // Filter by difference from mean
-	const dataSD = deviation(unfilteredData, d => d.cost);
-	console.log('dataSD >>>', dataSD)
-const dataMean = mean(unfilteredData, d => d.cost);
-	console.log('dataMean >>>', dataMean)
+	// const dataSD = deviation(unfilteredData, d => d.cost);
+	// console.log('dataSD >>>', dataSD)
+// const dataMean = mean(unfilteredData, d => d.cost);
+	// console.log('dataMean >>>', dataMean)
 
-const outlier = useSelector(state => state.outlier);
-const tripleFilteredData = doubleFilteredData.filter(item => item.cost < dataMean+(dataSD*outlier));
-	console.log('tripleFilteredData in index >>>', tripleFilteredData)
-	console.log('unfilteredData in index >>>', unfilteredData)
+// const outlier = useSelector(state => state.outlier);
+// const tripleFilteredData = doubleFilteredData.filter(item => item.cost < dataMean+(dataSD*outlier));
+// 	console.log('tripleFilteredData in index >>>', tripleFilteredData)
+// 	console.log('unfilteredData in index >>>', unfilteredData)
 
 	return (
 		<Layout title="Cost per Acre" >
@@ -47,12 +48,12 @@ const tripleFilteredData = doubleFilteredData.filter(item => item.cost < dataMea
 			key="Scatter Graph" title="Scatter Graph">
           <Card>
 				  <CardBody >
-				  <LineChartsSvg  tripleFilteredData = {tripleFilteredData} />
+				  <LineChartsSvg  doubleFilteredData = {doubleFilteredData} />
 						  </CardBody>
 			  </Card>
 					  <Card>
 						  <CardBody >
-						  <LineChartsSidePanel tripleFilteredData = {tripleFilteredData} unfilteredData = {unfilteredData} />
+						  <LineChartsSidePanel doubleFilteredData = {doubleFilteredData} unfilteredData = {unfilteredData} />
 						  </CardBody>
 					  </Card>
         </Tab>
@@ -76,13 +77,5 @@ const tripleFilteredData = doubleFilteredData.filter(item => item.cost < dataMea
   );
 }
 
-export default LineCharts;
-
-// export async function getStaticProps(){
-// const res = await sql `SELECT * FROM barcharts ORDER BY year;`
-// 	return {
-// 		props: {...await serverSideTranslations('en', ['common']),
-// 			barChartsData: res}
-// }
-// }
+export default Index;
 

@@ -6,7 +6,7 @@ import remove from 'lodash.remove';
 
 const outlierSlice = createSlice({
 	name: 'outlier',
-	initialState: 3,
+	initialState: [],
 	reducers: {outlier(state, action) {return action.payload}}
 	})
 

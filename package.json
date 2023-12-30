@@ -32,6 +32,7 @@
     "react-stately": "^3.29.0",
     "redux": "^5.0.0",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "tippy.js": "^6.3.7",
     "use-local-storage-state": "^19.1.0",
     "use-resize-observer": "^9.1.0"
