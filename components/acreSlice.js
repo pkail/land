@@ -5,7 +5,6 @@ import remove from 'lodash.remove';
 
 const localStorageState = loadState()
 console.log('localStorageState in acre slice>>>', localStorageState)
-
 var  persistedValueswithHeader = (typeof(localStorageState) === 'undefined') ?  acreValues : localStorageState.acre;
 console.log('persistedValues before slice >>>', persistedValues)
 var  persistedValues = persistedValueswithHeader.slice(0, persistedValueswithHeader.length-1);
@@ -23,9 +22,10 @@ console.log('acreValues in acreslice >>>', acreValues)
 const acreSlice = createSlice({
 	name: 'acre',
 	initialState: persistedValues,
-	reducers: {acreFilter(state, action) {remove(state, item => item.key == action.payload)}}
+	reducers: {acreFilter(state, action) {remove(state, item => item.key == action.payload)},
+acreData(state, action) {return action.payload}}
 	})
 
-export const {acreFilter} = acreSlice.actions;
+export const {acreFilter, acreData} = acreSlice.actions;
 
 export default acreSlice.reducer;
