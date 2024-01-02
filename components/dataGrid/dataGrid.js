@@ -46,10 +46,7 @@ const columns = [
 ];
 
 export default function DataGrid(props) {
-	console.log('props >>>', props)
-	console.log('props.data >>>', props.data)
 	const [direction, setDirection] = useLocalStorageState('direction', {defaultValue: {column: "acres", direction: "ascending"}});
-	console.log('direction at top >>>', direction)
 	const dispatch = useDispatch();
   let list = useAsyncList({
 	   async load({signal}) {return {items: props.data}},

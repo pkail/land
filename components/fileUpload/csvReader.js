@@ -3,7 +3,6 @@ import { useCSVReader } from 'react-papaparse';
 import { useDispatch } from 'react-redux';
 import { range } from '../rangeSlice';
 import { acreData } from '../acreSlice';
-console.log('acreData >>>', acreData)
 import { store } from '../store';
 import { useState } from 'react';
 import useLocalStorageState from 'use-local-storage-state'
@@ -20,7 +19,6 @@ export default function CSVReader() {
 		  <CSVReader
 	  onUploadAccepted={(results) => {
 		  const dataJSON = new Array(results.data.length);
-		  console.log('dataJSON new array >>>', dataJSON)
 		  var i, j;
 		  for (i=0, j=7; i < results.data.length; i++, j--)
 		  {
