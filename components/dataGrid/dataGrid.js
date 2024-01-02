@@ -8,6 +8,7 @@ import {Card, CardBody, Button } from "@nextui-org/react";
 import {Link} from "@nextui-org/react";
 import {format} from 'd3-format';
 import {useAsyncList} from 'react-stately'
+import useLocalStorageState from 'use-local-storage-state'
 
 const columns = [
   {
@@ -47,22 +48,21 @@ const columns = [
 export default function DataGrid(props) {
 	console.log('props >>>', props)
 	console.log('props.data >>>', props.data)
+	const [direction, setDirection] = useLocalStorageState('direction', {defaultValue: {column: "acres", direction: "ascending"}});
+	console.log('direction at top >>>', direction)
 	const dispatch = useDispatch();
   let list = useAsyncList({
 	   async load({signal}) {return {items: props.data}},
      async sort({items, sortDescriptor}) {
-		console.log('sortDescriptor >>>', sortDescriptor)
+		 setDirection(sortDescriptor);
+		console.log('direction >>>', direction)
       return {
         items: items.sort((a, b) => {
-          let first = a[sortDescriptor.column];
-			console.log('first >>>', first)
-          let second = b[sortDescriptor.column];
-			console.log('second >>>', second)
+          let first = a[direction.column];
+          let second = b[direction.column];
           let cmp = (first < second ? -1 : 1);
-			console.log('cmp >>>', cmp)
 
-		console.log('items >>>', items)
-          if (sortDescriptor.direction === "descending") {
+          if (direction.direction === "descending") {
             cmp *= -1;
           }
 
@@ -101,9 +101,9 @@ export default function DataGrid(props) {
 		  <Table
 			color = 'green'
 			aria-label="Data Grid"
-			sortDescriptor={list.sortDescriptor}
 			onSortChange={list.sort}
 			selectionMode="single"
+			sortDescriptor={direction}
 			onRowAction={(key) => dispatch(acreFilter(key))}
 			selectionBehavior="replace">
 			  <TableHeader columns={columns}>

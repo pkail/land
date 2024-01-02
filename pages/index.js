@@ -56,8 +56,6 @@ const Index = () =>  {
 						  <LineChartsSidePanel doubleFilteredData = {doubleFilteredData} unfilteredData = {unfilteredData} />
 						  </CardBody>
 					  </Card>
-        </Tab>
-        <Tab key="Data Grid" title="Data Grid">
           <Card>
             <CardBody>
 				<DataGrid data= {unfilteredData} />
